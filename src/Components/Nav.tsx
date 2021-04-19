@@ -7,7 +7,7 @@ import ActivityIcon from "../assets/img/activity.svg";
 
 const Nav: React.FC = () => {
     return (
-        <nav className="border-b border-gray p-5 flex flex-row mb-10">
+        <nav className="border-b border-gray p-5 flex flex-row mb-10 items-center">
             <h1 className="text-gray-700 text-2xl">Internationaal Project</h1>
             <ul className="ml-auto w-max flex flex-row">
                 <NavItem route="/" title="Home" icon={HomeIcon} />
