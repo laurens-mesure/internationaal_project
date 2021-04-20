@@ -20,7 +20,6 @@ const useVirusTotalLookup = <T,>(url?: string, fullData = true) => {
             ).then(async (r: Response) => {
                 if (r.ok) {
                     const rData = await r.json();
-                    console.log(rData);
                     setData(rData);
                 }
             });
