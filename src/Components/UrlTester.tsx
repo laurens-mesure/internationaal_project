@@ -39,7 +39,7 @@ const UrlTester: React.FC = () => {
                     ref={submitButton}
                 />
             </form>
-            {data && data.response_code === 1 ? (
+            {data && data.response_code === 1 && !isScanning ? (
                 <p
                     className={`text-center ${
                         data.positives || 0 > 0 ? "bg-red-300" : "bg-green-400"
