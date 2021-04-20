@@ -1,7 +1,7 @@
-export default interface VirusTotal {
+export default interface IVirusTotal {
     filescan_id: string | null;
     permalink: string;
-    positives: number;
+    positives?: number;
     resource: string;
     response_code: number;
     scan_date: number;

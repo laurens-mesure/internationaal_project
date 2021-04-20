@@ -1,14 +1,26 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import useVirusTotalLookup from "../Hooks/VirusTotalLookup";
 import VirusTotal from "../Interfaces/VirusTotal";
 
 const UrlTester: React.FC = () => {
+    const submitButton = useRef<HTMLInputElement>(null);
     const [url, setUrl] = useState<string>();
-    const report = useVirusTotalLookup<VirusTotal | undefined>(url);
-    console.log(report);
+    const { isScanning, data } = useVirusTotalLookup<VirusTotal | undefined>(
+        url
+    );
+
+    useEffect(() => {
+        if (isScanning) {
+            console.log("timeout");
+            setUrl("");
+            setTimeout(() => {
+                if (submitButton.current) submitButton.current.click();
+            }, 30e3);
+        }
+    }, [isScanning]);
 
     return (
-        <section className="mx-auto w-1/3">
+        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
             <form
                 className="flex flex-row mb-6"
                 onSubmit={(e) => handleSubmit(e)}
@@ -24,22 +36,27 @@ const UrlTester: React.FC = () => {
                     type="submit"
                     value="Check URL"
                     className="w-max px-4 py-2 ml-4 bg-green-500 text-white rounded-md shadow-md"
+                    ref={submitButton}
                 />
             </form>
-            {report && (
+            {data && data.response_code === 1 ? (
                 <p
                     className={`text-center ${
-                        report.positives > 1 ? "bg-red-300" : "bg-green-400"
+                        data.positives || 0 > 0 ? "bg-red-300" : "bg-green-400"
                     } rounded-md shadow-lg p-3`}
                     style={{
-                        color: report.positives > 1 ? "#513743" : "#fff",
+                        color: data.positives || 0 > 0 ? "#513743" : "#fff",
                     }}
                 >
                     The URL {url}{" "}
-                    {report.positives > 1
-                        ? "has a high probablity of maliscious content!"
+                    {data.positives || 0 > 0
+                        ? "has a high probablity of malicious content!"
                         : "is probably safe."}
                 </p>
+            ) : isScanning ? (
+                <p>Processing...</p>
+            ) : (
+                <p>This link does not exist in dataset.</p>
             )}
         </section>
     );
