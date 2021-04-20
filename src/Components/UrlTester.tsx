@@ -1,6 +1,11 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
+import useVirusTotalLookup from "../Hooks/VirusTotalLookup";
 
 const UrlTester: React.FC = () => {
+    const [url, setUrl] = useState<string>();
+    const report = useVirusTotalLookup(url);
+    console.log(report);
+
     return (
         <form
             className="flex flex-row mx-auto w-3/6"
@@ -24,7 +29,7 @@ const UrlTester: React.FC = () => {
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const data = new FormData(e.currentTarget);
-        const URL = data.get("query");
+        setUrl(data.get("query")?.toString());
     }
 };
 
