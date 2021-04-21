@@ -21,7 +21,7 @@ const UrlTester: React.FC = () => {
 
     return (
         <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
-            <h1 className="text-center text-lg mb-4 dark:text-gray-50">
+            <h1 className="text-center text-lg mb-4 dark:text-white">
                 You can test any URL for malware, phishing, scam...
             </h1>
             <form
@@ -57,7 +57,7 @@ const UrlTester: React.FC = () => {
                         : "is probably safe."}
                 </p>
             ) : (
-                isScanning && <p className="dark:text-gray-50">Processing...</p>
+                isScanning && <p className="dark:text-white">Processing...</p>
             )}
         </section>
     );
