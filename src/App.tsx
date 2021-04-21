@@ -11,7 +11,7 @@ import Footer from "./Components/Footer";
 const App: React.FC = () => {
     return (
         <Router>
-            <main className="flex flex-col min-h-screen">
+            <main className="flex flex-col min-h-screen dark:bg-gray-900">
                 <Nav />
                 <Switch>
                     <Route exact path="/" component={Frontpage} />
