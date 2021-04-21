@@ -21,6 +21,9 @@ const UrlTester: React.FC = () => {
 
     return (
         <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
+            <h1 className="text-center text-lg mb-4">
+                You can test any URL for malware, phishing, scam...
+            </h1>
             <form
                 className="flex flex-row mb-6"
                 onSubmit={(e) => handleSubmit(e)}

@@ -3,20 +3,25 @@ import React, { FormEvent } from "react";
 const Activity: React.FC = () => {
     return (
         <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
+            <h1 className="text-center text-lg mb-4">
+                You can enter your email address here to verify if you've been a
+                part of a data breach
+            </h1>
             <form
                 className="flex flex-row mb-6"
                 onSubmit={(e) => handleSubmit(e)}
             >
                 <input
-                    type="url"
+                    type="email"
                     name="query"
                     required
                     autoComplete="off"
+                    placeholder="john@example.com"
                     className="border border-gray-300 shadow-md flex-grow rounded-md p-1 px-2"
                 />
                 <input
                     type="submit"
-                    value="Check URL"
+                    value="Check me"
                     className="w-max px-4 py-2 ml-4 bg-green-500 text-white rounded-md shadow-md"
                 />
             </form>
@@ -44,7 +49,7 @@ const Activity: React.FC = () => {
 
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log("triggered");
+        console.log("here");
     }
 };
 
