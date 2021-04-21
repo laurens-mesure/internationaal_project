@@ -18,14 +18,14 @@ const RecognizePhishingAttacks = () => {
             key="Know how to recognize a phising attack"
             className="border-b border-gray-200 mb-2"
         >
-            <p className="text-lg font-semibold text-gray-800 mb-1">
+            <p className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
                 Know how to recognize a phising attack
             </p>
-            <p className="mb-2">
+            <p className="mb-2 dark:text-white">
                 Phishing attacks can be easily avoided if you know how to
                 identify one. Some common clues to help identify them:
             </p>
-            <ul className="list-disc mb-2 ml-6">{listItems}</ul>
+            <ul className="list-disc mb-2 ml-6 dark:text-white">{listItems}</ul>
         </div>
     );
 };
