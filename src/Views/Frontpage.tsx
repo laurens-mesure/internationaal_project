@@ -2,6 +2,7 @@ import React from "react";
 import UrlTester from "../Components/UrlTester";
 import WhatIs from "../Components/WhatIs";
 import WhyPhishing from "../Components/WhyPhishing";
+import AgeGroups from "../Components/AgeGroups";
 
 const Frontpage: React.FC = () => {
     return (
@@ -12,6 +13,7 @@ const Frontpage: React.FC = () => {
             <UrlTester />
             <WhatIs />
             <WhyPhishing />
+            <AgeGroups />
         </div>
     );
 };
