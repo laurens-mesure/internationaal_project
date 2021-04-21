@@ -1,5 +1,6 @@
 import React from "react";
 import UrlTester from "../Components/UrlTester";
+import PhishingTypes from "../Components/PhishingTypes";
 
 const Frontpage: React.FC = () => {
     return (
@@ -8,6 +9,7 @@ const Frontpage: React.FC = () => {
                 You can test any URL for malware, phishing, scam...
             </h1>
             <UrlTester />
+            <PhishingTypes />
         </div>
     );
 };
