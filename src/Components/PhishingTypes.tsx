@@ -12,24 +12,22 @@ const data = [
     {"name": "Malvertising", "description": " Phishing attacks like these try to make a victim click on advertisements or pop-ups which then installs malware. Malware is software designed to cause intentional harm to a computer."},
 ];
 
-const listItems = data.map((d) => 
-<div key={d.name} className="border-b border-gray-200 mb-2">
-    <p className="text-lg font-semibold text-gray-800 mb-1">{d.name}</p>
-    <p className="mb-2">{d.description}</p>
-</div>)
+const listItems = data.map((item) => 
+<div key={item.name} className="border-b border-gray-200 mb-2">
+    <p className="text-lg font-semibold text-gray-800 mb-1">{item.name}</p>
+    <p className="mb-2">{item.description}</p>
+</div>);
 
 const PhishingTypes: React.FC = () => {
     return (
-        <React.Fragment>
-            <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
+            <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 mb-10">
                 <h2 className="text-2xl text-center font-semibold text-gray-800 mb-4">Types of phishing</h2>
                 <p className="text-center mb-4">There are a lot of phishing attacks which we can split up into various types.</p>
                 <div>
                     {listItems}
                 </div>
             </div>
-        </React.Fragment>
-    )
+    );
 }
 
 export default PhishingTypes;

@@ -1,6 +1,7 @@
 import React from "react";
 import UrlTester from "../Components/UrlTester";
 import PhishingTypes from "../Components/PhishingTypes";
+import PreventPhishingAttacks from "../Components/PreventPhishingAttacks";
 
 const Frontpage: React.FC = () => {
     return (
@@ -10,6 +11,7 @@ const Frontpage: React.FC = () => {
             </h1>
             <UrlTester />
             <PhishingTypes />
+            <PreventPhishingAttacks />
         </div>
     );
 };
