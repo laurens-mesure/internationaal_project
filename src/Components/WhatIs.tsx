@@ -2,6 +2,7 @@ import React from "react";
 
 // Icons
 import FishingIcon from "../assets/img/fishing.svg";
+import UrlTester from "./UrlTester";
 
 const WhatIs: React.FC = () => {
     return (
@@ -37,10 +38,12 @@ const WhatIs: React.FC = () => {
                 site. As of 2020, phishing is the most common attack performed
                 by cyber criminals.
             </p>
-            <p className="mb-3 dark:text-white">
+            <p className="mb-10 dark:text-white">
                 Such an attack can be disastrous to the victim. It can lead to
                 identity theft, unauthorized purchases, ...
             </p>
+
+            <UrlTester />
         </section>
     );
 };
