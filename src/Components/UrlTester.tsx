@@ -42,14 +42,14 @@ const UrlTester: React.FC = () => {
             {data && data.response_code === 1 && !isScanning ? (
                 <p
                     className={`text-center ${
-                        data.positives || 0 > 0 ? "bg-red-300" : "bg-green-400"
+                        data.positives || -1 > 0 ? "bg-red-300" : "bg-green-400"
                     } rounded-md shadow-lg p-3`}
                     style={{
-                        color: data.positives || 0 > 0 ? "#513743" : "#fff",
+                        color: data.positives || -1 > 0 ? "#513743" : "#fff",
                     }}
                 >
                     The URL {url}{" "}
-                    {data.positives || 0 > 0
+                    {data.positives || -1 > 0
                         ? "has a high probablity of malicious content!"
                         : "is probably safe."}
                 </p>

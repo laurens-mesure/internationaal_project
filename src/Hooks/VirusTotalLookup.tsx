@@ -9,7 +9,8 @@ const useVirusTotalLookup = <T extends IVirusTotal | undefined>(
 ) => {
     const [data, setData] = useState<T>();
     const [isScanning, setScanning] = useState<boolean>(false);
-    const CORS_EVASION = "http://localhost:8080";
+    const CORS_EVASION =
+        "https://premium-buckeye-281615-symq37fesq-uc.a.run.app/";
     const virusTotalAPI = "https://www.virustotal.com/vtapi/v2/url/report";
     const API_KEY =
         "97841affc3ba9df216478903da8db3accc0194df75b4d79debf2119761c5f934";
@@ -35,13 +36,12 @@ const useVirusTotalLookup = <T extends IVirusTotal | undefined>(
                     ) {
                         setScanning(true);
                     } else {
-                        console.log(rData);
                         setData(rData);
                     }
                 }
             });
         }
-    }, [virusTotalAPI, API_KEY, url, fullData, setScanning]);
+    }, [virusTotalAPI, API_KEY, url, fullData, setScanning, CORS_EVASION]);
 
     return { isScanning, data };
 };

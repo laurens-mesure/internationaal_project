@@ -27,6 +27,7 @@ To get the frontend running all you need to do is run yarn 👍 (or npm 😳) to
 ✨ Or if you don't care about developing you can run the website from public directory
 
 ```bash
+yarn build
 cd build
 chrome ./build/index.html
 ```
