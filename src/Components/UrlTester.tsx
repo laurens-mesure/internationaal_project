@@ -1,5 +1,9 @@
 import React, { FormEvent, useEffect, useRef, useState } from "react";
+
+// Hooks
 import useVirusTotalLookup from "../Hooks/VirusTotalLookup";
+
+// Interfaces
 import VirusTotal from "../Interfaces/VirusTotal";
 
 const UrlTester: React.FC = () => {
