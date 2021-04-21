@@ -3,6 +3,7 @@ import UrlTester from "../Components/UrlTester";
 import WhatIs from "../Components/WhatIs";
 import WhyPhishing from "../Components/WhyPhishing";
 import AgeGroups from "../Components/AgeGroups";
+import OriginStory from "../Components/OriginStory";
 
 const Frontpage: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Frontpage: React.FC = () => {
             <WhatIs />
             <WhyPhishing />
             <AgeGroups />
+            <OriginStory />
         </div>
     );
 };
