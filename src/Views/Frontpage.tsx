@@ -1,6 +1,7 @@
 import React from "react";
 import UrlTester from "../Components/UrlTester";
 import WhatIs from "../Components/WhatIs";
+import WhyPhishing from "../Components/WhyPhishing";
 
 const Frontpage: React.FC = () => {
     return (
@@ -10,6 +11,7 @@ const Frontpage: React.FC = () => {
             </h1>
             <UrlTester />
             <WhatIs />
+            <WhyPhishing />
         </div>
     );
 };
