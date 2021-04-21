@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Views
 import Frontpage from "./Views/Frontpage";
+import Activity from "./Views/Activity";
 
 // Components
 import Nav from "./Components/Nav";
@@ -15,6 +16,7 @@ const App: React.FC = () => {
                 <Nav />
                 <Switch>
                     <Route exact path="/" component={Frontpage} />
+                    <Route exact path="/activity" component={Activity} />
                 </Switch>
                 <Footer />
             </main>

@@ -7,9 +7,12 @@ This is the repository for the frontend web site for our international project.
 ### Cors anywhere
 
 To run this project you need to enable CORS-ANYWHERE. This does require [Node.js](https://nodejs.org/en/download/)
+If our server is running you don't need to enable cors-anywhere.
 
 ```bash
+    git submodule add https://github.com/Rob--W/cors-anywhere.git
     cd cors-anywhere
+    yarn install (OR npm install)
     node server.js
 ```
 
