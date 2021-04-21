@@ -49,11 +49,14 @@ const data = [
 ];
 
 const listItems = data.map((d) => (
-    <div key={d.name} className="border-b border-gray-200 mb-2 dark:text-white">
+    <div
+        key={d.name}
+        className="border-b border-gray-200  dark:text-white mb-8"
+    >
         <p className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">
             {d.name}
         </p>
-        <p className="mb-2">{d.description}</p>
+        <p className="mb-4">{d.description}</p>
     </div>
 ));
 
