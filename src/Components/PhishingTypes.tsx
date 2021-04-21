@@ -1,5 +1,8 @@
 import React from "react";
 
+// Icons
+import TypeIcon from "../assets/img/types.svg";
+
 const data = [
     {
         name: "Email phishing",
@@ -64,13 +67,18 @@ const PhishingTypes: React.FC = () => {
     return (
         <React.Fragment>
             <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
-                <h2 className="text-2xl text-center font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                    Types of phishing
-                </h2>
-                <p className="text-center mb-4 dark:text-white">
-                    There are a lot of phishing attacks which we can split up
-                    into various types.
-                </p>
+                <div className="flex flex-row justify-between items-center mb-6">
+                    <img src={TypeIcon} alt="types" className="w-1/3 mr-10" />
+                    <div className="w-2/3">
+                        <h2 className="text-2xl text-center font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                            Types of phishing
+                        </h2>
+                        <p className="text-center dark:text-white">
+                            There are a lot of phishing attacks which we can
+                            split up into various types.
+                        </p>
+                    </div>
+                </div>
                 <div>{listItems}</div>
             </div>
         </React.Fragment>

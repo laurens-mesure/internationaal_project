@@ -1,11 +1,21 @@
 import React from "react";
 
+// Icons
+import WheelchairIcon from "../assets/img/wheelchair.svg";
+
 const AgeGroups: React.FC = () => {
     return (
         <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mb-4 mt-4">
-            <h1 className="text-2xl 2xl:font-bold mb-4 mt-2 text-gray-700 dark:text-gray-200">
-                What age group is most vulnerable to phishing?
-            </h1>
+            <div className="flex flex-row items-center mb-6">
+                <img
+                    src={WheelchairIcon}
+                    alt="Wheelchair"
+                    className="h-24 mr-10"
+                />
+                <h1 className="text-2xl 2xl:font-bold mb-4 mt-2 text-gray-700 dark:text-gray-200">
+                    What age group is most vulnerable to phishing?
+                </h1>
+            </div>
             <p className="mb-3 dark:text-white">
                 Research shows that people are vulnerable to phishing for
                 several reasons:

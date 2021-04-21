@@ -1,6 +1,10 @@
 import React from "react";
 
+// Components
 import RecognizePhishingAttacks from "../Components/RecognizePhishingAttacks";
+
+// Icons
+import TeachingIcon from "../assets/img/teaching.svg";
 
 const data = [
     {
@@ -60,10 +64,15 @@ const PreventPhishingAttacks: React.FC = () => {
                 types of it, we’re going to take a look at some ways to protect
                 your sensitive data against these attacks.
             </p>
-            <div>
+            <div className="flex flex-row">
                 <RecognizePhishingAttacks />
-                {listItems}
+                <img
+                    src={TeachingIcon}
+                    alt="teaching"
+                    className="w-1/3 ml-10"
+                />
             </div>
+            {listItems}
         </div>
     );
 };

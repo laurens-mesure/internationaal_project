@@ -20,9 +20,10 @@ const UrlTester: React.FC = () => {
     }, [isScanning]);
 
     return (
-        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
+        <section className="mx-auto">
             <h1 className="text-center text-lg mb-4 dark:text-white">
-                You can test any URL for malware, phishing, scam...
+                Want to test a link that you find suspicious? You can test any
+                URL for malware, phishing, scam...
             </h1>
             <form
                 className="flex flex-row mb-6"
