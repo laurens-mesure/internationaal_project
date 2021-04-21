@@ -9,8 +9,7 @@ const useVirusTotalLookup = <T extends IVirusTotal | undefined>(
 ) => {
     const [data, setData] = useState<T>();
     const [isScanning, setScanning] = useState<boolean>(false);
-    const CORS_EVASION =
-        "https://premium-buckeye-281615-symq37fesq-uc.a.run.app/";
+    const CORS_EVASION = process.env.REACT_APP_CORS_EVASION;
     const virusTotalAPI = "https://www.virustotal.com/vtapi/v2/url/report";
     const API_KEY =
         "97841affc3ba9df216478903da8db3accc0194df75b4d79debf2119761c5f934";
