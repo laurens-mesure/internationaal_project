@@ -12,7 +12,7 @@ import OriginStory from "../Components/OriginStory";
 const Frontpage: React.FC = () => {
     return (
         <div className="p-4">
-            <UrlTester />
+            {/* <UrlTester /> */}
             <WhatIs />
             <WhyPhishing />
             <PhishingTypes />

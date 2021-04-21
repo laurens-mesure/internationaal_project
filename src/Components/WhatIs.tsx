@@ -1,8 +1,16 @@
 import React from "react";
 
+// Icons
+import FishingIcon from "../assets/img/fishing.svg";
+
 const WhatIs: React.FC = () => {
     return (
-        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mb-4 mt-4">
+        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mt-4 mb-20">
+            <img
+                src={FishingIcon}
+                alt="Phishing"
+                className="mx-auto mb-6 w-1/2"
+            />
             <h1 className="text-2xl 2xl:font-bold mb-4 mt-2 text-gray-700 dark:text-gray-200">
                 What is phishing?
             </h1>
