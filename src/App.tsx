@@ -7,6 +7,7 @@ import Frontpage from "./Views/Frontpage";
 // Components
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
+import DaBigQuizy from "./Components/DaBigQuizy";
 
 const App: React.FC = () => {
     return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
                 <Switch>
                     <Route exact path="/" component={Frontpage} />
                 </Switch>
+                <DaBigQuizy />
                 <Footer />
             </main>
         </Router>
