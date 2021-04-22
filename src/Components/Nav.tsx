@@ -14,8 +14,8 @@ const Nav: React.FC = () => {
             <ul className="ml-auto w-max flex flex-row">
                 <NavItem route="/" title="Home" icon={HomeIcon} />
                 <NavItem
-                    route="/activity"
-                    title="Activity"
+                    route="/breaches"
+                    title="Breaches"
                     icon={ActivityIcon}
                 />
             </ul>
