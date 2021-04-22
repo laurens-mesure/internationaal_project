@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 
+// Google login
+import GoogleLogin, {
+    GoogleLoginResponse,
+    GoogleLoginResponseOffline,
+} from "react-google-login";
+
 // Hooks
 import useMailChecker from "../Hooks/Mailchecker";
 import IMailchecker from "../Interfaces/Mailchecker";
@@ -7,6 +13,10 @@ import IMailchecker from "../Interfaces/Mailchecker";
 const MailChecker: React.FC = () => {
     const [rawMail, setMail] = useState<string | undefined>();
     const data = useMailChecker<IMailchecker | undefined>(rawMail);
+
+    // Google oAuth2 settings
+    const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+    const API_KEY = process.env.REACT_APP_API_KEY;
 
     return (
         <section className="p-4 mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mt-4 mb-20">
@@ -25,6 +35,13 @@ const MailChecker: React.FC = () => {
                     value="Check mail"
                 />
             </form>
+            <GoogleLogin
+                clientId={CLIENT_ID || ""}
+                buttonText="Login"
+                onSuccess={(response) => responseGoogle(response)}
+                onFailure={responseGoogle}
+                cookiePolicy={"single_host_origin"}
+            />
             {data &&
                 (parseFloat(data.score) < 1.5 ? (
                     <p className="text-center bg-green-400 rounded-md shadow-lg p-3 text-white">
@@ -49,6 +66,12 @@ const MailChecker: React.FC = () => {
         if (mailData instanceof File) return;
 
         setMail(mailData || undefined);
+    }
+
+    function responseGoogle(
+        response: GoogleLoginResponse | GoogleLoginResponseOffline
+    ) {
+        console.log(response);
     }
 };
 
