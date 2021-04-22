@@ -17,7 +17,7 @@ const Pwnd: React.FC = () => {
 
     return (
         <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
-            <h1 className="text-center text-lg mb-4">
+            <h1 className="text-center text-lg mb-4 text-gray-700 dark:text-gray-200">
                 You can enter your email address here to verify if you've been a
                 part of a data breach
             </h1>
@@ -50,11 +50,11 @@ const Pwnd: React.FC = () => {
                     </p>
                 ) : (
                     <>
-                        <p className="text-center bg-red-400 text-gray-800 rounded-md shadow-lg p-3">
+                        <p className="text-center bg-red-400 text-gray-800 rounded-md shadow-lg p-3 ">
                             The mail address {email} is compromised! Change your
                             password!
                         </p>
-                        <p className="mt-10 mb-4">
+                        <p className="mt-10 mb-4 text-gray-700 dark:text-gray-200">
                             You have been part of the following breaches
                         </p>
                         {data
@@ -64,7 +64,10 @@ const Pwnd: React.FC = () => {
                                     new Date(a.BreachDate).getTime()
                             )
                             .map((breach, key) => (
-                                <div key={key} className="flex flex-row mb-8">
+                                <div
+                                    key={key}
+                                    className="flex flex-row mb-8 text-gray-700 dark:text-gray-200"
+                                >
                                     <img
                                         src={breach.LogoPath}
                                         alt={breach.Name}
