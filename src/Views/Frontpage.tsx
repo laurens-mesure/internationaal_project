@@ -12,7 +12,7 @@ import MostCommonPhishingPlaces from "../Components/MostCommonPhishingPlaces";
 
 const Frontpage: React.FC = () => {
     return (
-        <div className="p-4">
+        <div className="p-2">
             <WhatIs />
             <WhyPhishing />
             <PhishingTypes />

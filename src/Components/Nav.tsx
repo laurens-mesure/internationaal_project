@@ -18,7 +18,7 @@ const Nav: React.FC = () => {
 
                 <div className="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
 
-                    <ul className="ml-auto w-max flex flex-row">
+                    <ul className="flex flex-row items-center justify-center">
                         <NavItem route="/" title="Home" icon={HomeIcon} />
                         <NavItem
                             route="/breaches"
@@ -32,8 +32,7 @@ const Nav: React.FC = () => {
 
             <section className="flex items-center justify-center" style={{height:650, backgroundImage: `url(${PhishingHeaderImg})`, backgroundPosition:`center`}}>
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 md:text-5xl">Phishing, Don't get hooked</h2>
-                    <p className="mt-6 text-xl font-medium tracking-wider text-gray-700">Educate yourself!</p>
+                    <h2 className="text-3xl font-bold text-white md:text-6xl bg-gray-900 p-2 rounded-lg mx-3"><b>Phishing...</b> Don't get hooked!</h2>
                 </div>
             </section>
         </header>
@@ -48,10 +47,10 @@ interface INavItem {
 
 const NavItem: React.FC<INavItem> = ({ title, route, icon }) => {
     return (
-        <li className="border border-gray-300 rounded-md px-5 py-2 ml-6 hover:border-blue-500">
+        <li className="border border-gray-300 rounded-md px-5 py-2 hover:border-blue-500 mx-3 my-3">
             <Link to={route} className="flex flex-row items-center">
                 <div className="h-4 w-4">{icon}</div>
-                <p className="ml-6 text-white">{title}</p>
+                <p className="px-2 text-white">{title}</p>
             </Link>
         </li>
     );
