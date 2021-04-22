@@ -16,7 +16,7 @@ const App: React.FC = () => {
                 <Nav />
                 <Switch>
                     <Route exact path="/" component={Frontpage} />
-                    <Route exact path="/activity" component={Activity} />
+                    <Route exact path="/breaches" component={Activity} />
                 </Switch>
                 <Footer />
             </main>
