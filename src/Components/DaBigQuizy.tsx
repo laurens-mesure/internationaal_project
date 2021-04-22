@@ -123,7 +123,6 @@ const DaBigQuizy: React.FC = () => {
                                             }
                                         }
                                         let x = "w-50 mt-10 px-4 py-2 text-black rounded-md shadow-md hover:border-green-500 border-2 dark:text-white " + c;
-                                        console.log(x);
                                         return <button data-xyz='DAAG' className={x} onClick={(e)=>handleAnswerOptionClick(e, hunk)}>{hunk.answerText}</button>
                                         })}
                                 </div>
@@ -202,7 +201,6 @@ const DaBigQuizy: React.FC = () => {
             x["answerd"] = false;
             y.push(x);
         });
-        console.log(y);
         setYeet(y);
     }
 
@@ -210,7 +208,6 @@ const DaBigQuizy: React.FC = () => {
         e.preventDefault();
         if (!hunk.answerd){
             let id = findId(hunk);
-            console.log(id);
             if (id !== -1){
                 yeet[currentQuestion].answerOptions[id].answerd = true;
             }
@@ -229,7 +226,6 @@ const DaBigQuizy: React.FC = () => {
         let id = -1;
         let count = 0;
         yeet[currentQuestion].answerOptions.forEach((e:LooseObject)=>{
-            console.log(e);
             if (e.answerText === hunk.answerText){
                 id=count;
             }
