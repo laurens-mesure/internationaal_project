@@ -31,7 +31,7 @@ const Pwnd: React.FC = () => {
                 <input
                     type="submit"
                     value="Check me"
-                    className="w-max px-4 py-2 ml-4 bg-green-500 text-white rounded-md shadow-md"
+                    className="w-max px-4 py-2 ml-4 bg-green-500 text-white rounded-md shadow-md hover:border-white border-2 dark:border-black"
                 />
             </form>
             {data && !isLoading && (

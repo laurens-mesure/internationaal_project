@@ -8,7 +8,6 @@ import Activity from "./Views/Activity";
 // Components
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
-import DaBigQuizy from "./Components/DaBigQuizy";
 
 const App: React.FC = () => {
     return (
@@ -19,7 +18,6 @@ const App: React.FC = () => {
                     <Route exact path="/" component={Frontpage} />
                     <Route exact path="/activity" component={Activity} />
                 </Switch>
-                <DaBigQuizy />
                 <Footer />
             </main>
         </Router>
