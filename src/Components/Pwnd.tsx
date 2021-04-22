@@ -1,10 +1,14 @@
 import React, { FormEvent, useEffect, useState } from "react";
 
+// Icons
+import SearchIcon from "../assets/img/search.svg";
+
 // Interfaces
 import IPwnd from "../Interfaces/Pwnd";
 
 // Hooks
 import usePwndLookup from "../Hooks/PwndLookup";
+import SearchingIcon from "../assets/img/searching.svg";
 
 const Pwnd: React.FC = () => {
     const [email, setEmail] = useState<string>();
@@ -22,22 +26,20 @@ const Pwnd: React.FC = () => {
                 part of a data breach
             </h1>
             <form
-                className="flex flex-row mb-6"
+                className="bg-white flex items-center rounded-full shadow-md mb-8 border-2"
                 onSubmit={(e) => handleSubmit(e)}
             >
-                <input
-                    type="email"
-                    name="query"
-                    required
-                    autoComplete="off"
-                    placeholder="john@example.com"
-                    className="border border-gray-300 shadow-md flex-grow rounded-md p-1 px-2"
-                />
-                <input
-                    type="submit"
-                    value="Check me"
-                    className="w-max px-4 py-2 ml-4 bg-green-500 text-white rounded-md shadow-md"
-                />
+                    <input
+                        type="email"
+                        name="query"
+                        required
+                        autoComplete="off"
+                        placeholder="john@example.com"
+                        className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
+                    />
+                    <button
+                        className="bg-blue-500 text-white rounded-full p-2 m-1 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"
+                    ><img src={SearchIcon} alt="search" className="h-4" /></button>
             </form>
             {data &&
                 !isLoading &&

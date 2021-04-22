@@ -11,7 +11,7 @@ const Nav: React.FC = () => {
         <header className="bg-gray-900 header mb-10" >
             <nav className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
                 <div className="flex items-center justify-between">
-                    <a className="text-xl font-bold text-white transition-colors duration-300 transform md:text-2xl hover:text-indigo-400"
+                    <a className="text-xl font-bold text-white transition-colors duration-300 transform md:text-2xl hover:text-blue-400"
                     >International Project</a>
 
                 </div>
@@ -51,7 +51,7 @@ const NavItem: React.FC<INavItem> = ({ title, route, icon }) => {
         <li className="border border-gray-300 rounded-md px-5 py-2 ml-6 hover:border-blue-500">
             <Link to={route} className="flex flex-row items-center">
                 <div className="h-4 w-4">{icon}</div>
-                <p className="ml-6 dark:text-white">{title}</p>
+                <p className="ml-6 text-white">{title}</p>
             </Link>
         </li>
     );
