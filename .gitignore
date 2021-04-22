@@ -25,3 +25,12 @@ package-lock.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+=======
+
+
+# API key
+src/assets/keys/pwnd.key
+
+/cors-anywhere
+>>>>>>> 7218351d11469ba8151f845c7bd01b77c7c99390
