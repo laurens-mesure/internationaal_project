@@ -67,13 +67,13 @@ const PhishingTypes: React.FC = () => {
     return (
         <React.Fragment>
             <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
-                <div className="flex flex-row justify-between items-center mb-6">
+                <div className="flex flex-col md:flex-row justify-between mb-6">
                     <img src={TypeIcon} alt="types" className="w-1/3 mr-10" />
                     <div className="w-2/3">
-                        <h2 className="text-2xl text-center font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
                             Types of phishing
                         </h2>
-                        <p className="text-center dark:text-white">
+                        <p className="dark:text-white">
                             There are a lot of phishing attacks which we can
                             split up into various types.
                         </p>

@@ -64,7 +64,7 @@ const PreventPhishingAttacks: React.FC = () => {
                 types of it, we’re going to take a look at some ways to protect
                 your sensitive data against these attacks.
             </p>
-            <div className="flex flex-row">
+            <div className="flex flex-col md:flex-row">
                 <RecognizePhishingAttacks />
                 <img
                     src={TeachingIcon}

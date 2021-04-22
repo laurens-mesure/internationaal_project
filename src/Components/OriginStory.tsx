@@ -5,8 +5,8 @@ import MapIcon from "../assets/img/map.svg";
 const OriginStory: React.FC = () => {
     return (
         <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-gray-700 text-lg mb-4 mt-4">
-            <div className="flex flex-row justify-between">
-                <div className="w-2/4">
+            <div className="flex flex-col md:flex-row justify-between">
+                <div className="">
                     <h1 className="text-2xl 2xl:font-bold mb-4 mt-2 text-gray-700 dark:text-gray-200">
                         Origin of phishing
                     </h1>
