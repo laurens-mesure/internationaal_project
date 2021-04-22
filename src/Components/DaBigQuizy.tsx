@@ -90,8 +90,8 @@ const DaBigQuizy: React.FC = () => {
             {
             showScore ? (
                 <div className="flex flex-row mb-6">
-                    <p>Your score is {score}/{questions.length}</p>
-                    <button className="w-max px-4 py-2 bg-white-500 text-black rounded-md shadow-md" onClick={()=>{restartQuiz()}}>Restart quiz</button>
+                    <p className="dark:text-white">Your score is {score}/{questions.length}</p>
+                    <button className="w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md" onClick={()=>{restartQuiz()}}>Restart quiz</button>
                 </div>
             )
             :
@@ -108,9 +108,9 @@ const DaBigQuizy: React.FC = () => {
                     <div className="flex flex-col">
                         <img className="h-2/4 w-3/4 px-4 py-2 text-white" src={questions[currentQuestion].img} alt="YEET"/>
                         <div>
-                            {questions[currentQuestion].answerOptions.map((hunk)=>{console.log(hunk);return <button data-xyz='DAAG' className="w-max px-4 py-2 bg-white-500 text-black rounded-md shadow-md" onClick={(e)=>handleAnswerOptionClick(e, hunk.isCorrect)}>{hunk.answerText}</button>})}
+                            {questions[currentQuestion].answerOptions.map((hunk)=>{console.log(hunk);return <button data-xyz='DAAG' className="w-max px-4 py-2 bg-white-500 text-black rounded-md shadow-md hover:border-green-500 border-2 dark:text-white" onClick={(e)=>handleAnswerOptionClick(e, hunk.isCorrect)}>{hunk.answerText}</button>})}
                         </div>
-                        <button onClick={()=>{nextQuestion()}}>Next</button>
+                        <button className="w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md" onClick={()=>{nextQuestion()}}>Next</button>
                     </div>
                 )     
             )       

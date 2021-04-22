@@ -12,7 +12,7 @@ const Pwnd: React.FC = () => {
 
     return (
         <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
-            <h1 className="text-center text-lg mb-4">
+            <h1 className="text-center text-lg mb-4 dark:text-white">
                 You can enter your email address here to verify if you've been a
                 part of a data breach
             </h1>
@@ -36,8 +36,8 @@ const Pwnd: React.FC = () => {
             </form>
             {data && !isLoading && (
                 <p
-                    className={`text-center ${
-                        data[0].name === "ok" ? "bg-green-400" : "bg-red-300"
+                    className={`text-center font-semibold ${
+                        data[0].name === "ok" ? "bg-green-400" : "bg-red-500"
                     } rounded-md shadow-lg p-3`}
                     style={{
                         color: data[0].name === "ok" ? "#513743" : "#fff",

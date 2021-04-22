@@ -19,27 +19,27 @@ const MostCommonPhishingPlaces: React.FC = () => {
                     alt="Chart of the most targeted online industries"
                     className="mx-auto mb-1"
                 />
-                <p className="text-xs w-4/5 mx-auto">
+                <p className="text-xs w-4/5 mx-auto dark:text-white">
                     Greg, Aaron. Phishing Activity Trends Report. 2021. Anti-Phishing Working Group,
                     <a 
-                        className="text-xs w-4/5 mx-auto"
+                        className="text-xs w-4/5 mx-auto dark:text-white"
                         href="https://docs.apwg.org/reports/apwg_trends_report_q4_2020.pdf">
                         https://docs.apwg.org/reports/apwg_trends_report_q4_2020.pdf
                     </a>
                 </p>
             </div>
             <h2 className="mb-5 dark:text-white">
-                Most phishing attacks per country
+                Most received phishing attacks per country
             </h2>
             <div className="mx-auto w-3/5 mb-5">
                 <img
                     src={MostPhishingAttacksPerCountry}
                     alt="Chart of most phishing attacks per country"
                     className="mx-auto mb-1"/>
-                <p className="text-xs w-4/5 mx-auto">
+                <p className="text-xs w-4/5 mx-auto dark:text-white">
                     Volkman, Elliot. These Are the Top Most Targeted Countries by Phishing Attacks. 2019. Phishlabs,
                     <a 
-                        className="text-xs w-4/5 mx-auto"
+                        className="text-xs w-4/5 mx-auto dark:text-white"
                         href="https://info.phishlabs.com/blog/top-targeted-countries-by-phishing-attacks-2019">
                         https://info.phishlabs.com/blog/top-targeted-countries-by-phishing-attacks-2019
                     </a>
