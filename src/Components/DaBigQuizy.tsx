@@ -85,13 +85,16 @@ const DaBigQuizy: React.FC = () => {
     const [score, setScore] = useState(0);
     const [markedCorrect, setMarkedCorrect] = useState(0);
     const [markedFalse, setMarkedFalse] = useState(0);
+    const [zoomed, setZoomed] = useState(false);
+    const [yeet, setYeet] = useState(Array<LooseObject>());
     return (
-        <div id="QUIZEKE" className="flex flex-row mb-6 mt-auto pl-96 w-11/12">
+        <div id="QUIZEKE" className="flex flex-row mx-auto">
             {
             showScore ? (
-                <div className="flex flex-row mb-6">
-                    <p className="dark:text-white">Your score is {score}/{questions.length}</p>
-                    <button className="w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:border-white border-2 dark:border-black" onClick={()=>{restartQuiz()}}>Restart quiz</button>
+                <div className="flex flex-col mb-6">
+                    <p className="font-semibold text-3xl dark:text-white">Your score is {score.toFixed(2)}/{questions.length}</p>
+                    <br/>
+                    <button className="w-max mx-auto px-4 py-2 bg-green-500 text-black rounded-md shadow-md" onClick={()=>{restartQuiz()}}>Restart quiz</button>
                 </div>
             )
             :
@@ -100,28 +103,58 @@ const DaBigQuizy: React.FC = () => {
                     <input
                         type="submit"
                         value="Start QUIZ"
-                        className="flex flex-col w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:border-white border-2 dark:border-black"
+                        className="flex flex-col w-max px-4 py-2 bg-green-500 rounded-md shadow-md"
                         onClick={(e)=>handleClick(e)}
                     />
                     
                 ):(
-                    <div className="flex flex-col">
-                        <img className="h-2/4 w-3/4 px-4 py-2 text-white" src={questions[currentQuestion].img} alt="YEET"/>
-                        <div>
-                            {questions[currentQuestion].answerOptions.map((hunk)=>{console.log(hunk);return <button data-xyz='DAAG' className="w-max px-4 py-2 bg-white-500 text-black rounded-md shadow-md hover:border-green-500 border-2 dark:text-white" onClick={(e)=>handleAnswerOptionClick(e, hunk.isCorrect)}>{hunk.answerText}</button>})}
+                    !zoomed ? (
+                        <div className="flex flex-col">
+                            <div className="flex flex-row h-1/2 mx-auto">
+                                <img className="object-scale-down w-3/4 px-4 py-2" style={{cursor: "zoom-in"}} onClick={()=>{enLarge()}} src={questions[currentQuestion].img} alt="YEET"/>
+                                <div className="flex flex-col">
+                                    {yeet[currentQuestion].answerOptions.map((hunk: any)=>{
+                                        let c = "bg-white-500";
+                                        if(hunk.answerd){
+                                            if (hunk.isCorrect){
+                                                c = "bg-green-500";
+                                            }else{
+                                                c = "bg-red-500";
+                                            }
+                                        }
+                                        let x = "w-50 mt-10 px-4 py-2 text-black rounded-md shadow-md hover:border-green-500 border-2 dark:text-white " + c;
+                                        console.log(x);
+                                        return <button data-xyz='DAAG' className={x} onClick={(e)=>handleAnswerOptionClick(e, hunk)}>{hunk.answerText}</button>
+                                        })}
+                                </div>
+                            </div>
+                            <br/>
+                            <button className="hover:bg-green-300 w-max mx-auto px-4 py-2 bg-green-200 text-black rounded-md shadow-md" onClick={()=>{nextQuestion()}}>Next</button>
                         </div>
-                        <button className="w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:border-white border-2 dark:border-black" onClick={()=>{nextQuestion()}}>Next</button>
-                    </div>
+                    ) : (
+                        <div>
+                            <img className="object-contain mx-auto w-3/4 px-4 py-2 text-white" style={{cursor: "zoom-out"}} onClick={()=>{enLarge()}} src={questions[currentQuestion].img} alt="YEET"/>
+                        </div>
+                    )
                 )     
             )       
             }  
         </div>
     );
 
+    function enLarge(){
+        if(zoomed){
+            setZoomed(false);
+        }else{
+            setZoomed(true);
+        }
+    }
+
     function restartQuiz() {
         setCurrentQuestion(0);
         setScore(0);
         setShowScore(false);
+        shuffleAnswerPos();
     }
 
     function nextQuestion() {
@@ -143,7 +176,6 @@ const DaBigQuizy: React.FC = () => {
             setMarkedCorrect(0);
             setMarkedFalse(0);
         }else{
-            console.log(score);
             setShowScore(true);
         }
     }
@@ -151,17 +183,59 @@ const DaBigQuizy: React.FC = () => {
     function handleClick(e:FormEvent) {
         e.preventDefault();
         setStarted(true);
+        shuffleAnswerPos();
     }
 
-    function handleAnswerOptionClick(e: FormEvent, isCorrect: boolean) {
-        e.currentTarget.classList.remove('bg-white-500');
-        if(isCorrect){
-            e.currentTarget.classList.add('bg-green-500');
-            setMarkedCorrect(markedCorrect+1);
-        }else{
-            e.currentTarget.classList.add('bg-red-500');
-            setMarkedFalse(markedFalse+1);
+    interface LooseObject {
+        [key: string]: any
+    }
+
+    function shuffleAnswerPos() {
+        let y = Array<LooseObject>();
+        questions.forEach(q=>{
+            let x: any = {};
+            x["img"] = q.img;
+            x["answerOptions"] = q.answerOptions.map((a)=>({sort: Math.random(), value: a}))
+            .sort((a,b)=>a.sort-b.sort)
+            .map((a)=>a.value);
+            x["falses"] = q.falses;
+            x["answerd"] = false;
+            y.push(x);
+        });
+        console.log(y);
+        setYeet(y);
+    }
+
+    function handleAnswerOptionClick(e: FormEvent, hunk: LooseObject) {
+        e.preventDefault();
+        if (!hunk.answerd){
+            let id = findId(hunk);
+            console.log(id);
+            if (id !== -1){
+                yeet[currentQuestion].answerOptions[id].answerd = true;
+            }
+            e.currentTarget.classList.remove('bg-white-500');
+            if(hunk.isCorrect){
+                e.currentTarget.classList.add('bg-green-500');
+                setMarkedCorrect(markedCorrect+1);
+            }else{
+                e.currentTarget.classList.add('bg-red-500');
+                setMarkedFalse(markedFalse+1);
+            }
         }
+    }
+
+    function findId(hunk:LooseObject) {
+        let id = -1;
+        let count = 0;
+        yeet[currentQuestion].answerOptions.forEach((e:LooseObject)=>{
+            console.log(e);
+            if (e.answerText === hunk.answerText){
+                id=count;
+            }
+            count+=1;
+        });
+        return id;
     }
 
 };
