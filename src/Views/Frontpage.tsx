@@ -7,6 +7,7 @@ import PhishingTypes from "../Components/PhishingTypes";
 import PreventPhishingAttacks from "../Components/PreventPhishingAttacks";
 import AgeGroups from "../Components/AgeGroups";
 import OriginStory from "../Components/OriginStory";
+import MostCommonPhishingPlaces from "../Components/MostCommonPhishingPlaces";
 
 const Frontpage: React.FC = () => {
     return (
@@ -17,6 +18,7 @@ const Frontpage: React.FC = () => {
             <PreventPhishingAttacks />
             <AgeGroups />
             <OriginStory />
+            <MostCommonPhishingPlaces />
         </div>
     );
 };
