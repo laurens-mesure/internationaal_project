@@ -18,7 +18,7 @@ const MostCommonPhishingPlaces: React.FC = () => {
                             <img
                                 src={MostPhishingAttacksPerCountry}
                                 alt="Chart of most phishing attacks per country"
-                                className="object-cover object-center h-full w-full"
+                                className="object-contain object-center h-full w-full"
                             />
                         </div>
                         <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3 dark:text-gray-100">
@@ -40,7 +40,7 @@ const MostCommonPhishingPlaces: React.FC = () => {
                             <img
                                 src={MostTargetedOnlineIndustries}
                                 alt="Chart of the most targeted online industries"
-                                className="object-cover object-center h-full w-full"
+                                className="object-contain object-center h-full w-full"
                             />
                         </div>
                         <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3 dark:text-gray-100">
