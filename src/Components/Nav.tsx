@@ -37,7 +37,7 @@ interface INavItem {
 
 const NavItem: React.FC<INavItem> = ({ title, route, icon }) => {
     return (
-        <li className="border border-gray-300 rounded-md px-5 py-2 ml-6">
+        <li className="border border-gray-300 rounded-md px-5 py-2 ml-6 hover:border-green-500">
             <Link to={route} className="flex flex-row items-center">
                 <div className="h-4 w-4">{icon}</div>
                 <p className="ml-6 dark:text-white">{title}</p>
