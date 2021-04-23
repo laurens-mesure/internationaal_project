@@ -159,7 +159,7 @@ const DaBigQuizy: React.FC = () => {
                             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
                                 <div className="flex flex-col">
                                     {yeet[currentQuestion].answerOptions.map(
-                                        (hunk: any) => {
+                                        (hunk: any, key: number) => {
                                             let c = "bg-white-500";
                                             if (hunk.answerd) {
                                                 if (hunk.isCorrect) {
@@ -173,6 +173,7 @@ const DaBigQuizy: React.FC = () => {
                                                 c;
                                             return (
                                                 <button
+                                                    key={key}
                                                     data-xyz="DAAG"
                                                     className={x}
                                                     onClick={(e) =>
