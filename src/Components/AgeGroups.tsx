@@ -6,21 +6,21 @@ import WheelchairIcon from "../assets/img/wheelchair.svg";
 const AgeGroups: React.FC = () => {
     return (
         <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mb-4 mt-4">
-            <div className="flex flex-col md:flex-row items-center mb-6">
+            <div className="flex flex-col md:flex-row items-center justify-center mb-6">
                 <img
                     src={WheelchairIcon}
                     alt="Wheelchair"
-                    className="h-24 mr-10"
+                    className="h-24 sm:mr-10"
                 />
-                <h1 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3">
+                <h1 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3 text-center sm:text-left">
                     What age group is most vulnerable to phishing?
                 </h1>
             </div>
-            <p className="mb-3 dark:text-white">
+            <p className="mb-3 dark:text-white text-center sm:text-left">
                 Research shows that people are vulnerable to phishing for
                 several reasons:
             </p>
-            <ul className="list-disc ml-20 dark:text-white">
+            <ul className="list-disc p-4 sm:p-0 sm:ml-20 dark:text-white">
                 <li>
                     People tend to judge a website’s legitimacy by its “look and
                     feel,” which attackers can easily replicate.
@@ -48,7 +48,7 @@ const AgeGroups: React.FC = () => {
                 to phishing than others:
             </p>
 
-            <ul className="list-disc ml-20 mb-3 dark:text-white">
+            <ul className="list-disc p-4 sm:p-0 sm:ml-20 mb-3  dark:text-white">
                 <li>
                     <strong> Women</strong> appear to be{" "}
                     <strong>more susceptible than men</strong> to phishing.

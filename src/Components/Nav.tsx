@@ -49,15 +49,14 @@ const Nav: React.FC = () => {
             </nav>
 
             <section
-                className="flex items-center justify-center"
+                className="flex items-center justify-center py-20 sm:py-32 md:py-40"
                 style={{
-                    height: 650,
                     backgroundImage: `url(${PhishingHeaderImg})`,
                     backgroundPosition: `center`,
                 }}
             >
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold text-white md:text-6xl bg-gray-900 px-2 py-5 rounded-lg mx-3">
+                    <h2 className="text-xl font-bold text-white md:text-6xl bg-gray-900 px-2 py-5 rounded-lg mx-3">
                         <b>Phishing...</b> Don't get hooked!
                     </h2>
                 </div>

@@ -86,7 +86,7 @@ const PreventPhishingAttacks: React.FC = () => {
                 <img
                     src={TeachingIcon}
                     alt="teaching"
-                    className="w-1/3 ml-10"
+                    className="w-1/3 sm:ml-10 block mx-auto"
                 />
             </div>
 

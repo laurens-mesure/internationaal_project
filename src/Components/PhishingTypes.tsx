@@ -72,7 +72,7 @@ const PhishingTypes: React.FC = () => {
     return (
         <React.Fragment>
             <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
-                <div className="flex flex-col md:flex-row justify-between mb-6">
+                <div className="flex flex-col items-center sm:items-start md:flex-row justify-between mb-6">
                     <img src={TypeIcon} alt="types" className="w-1/3 mr-10" />
                     <div className="w-2/3">
                         <h2 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">

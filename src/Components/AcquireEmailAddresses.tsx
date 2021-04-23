@@ -37,7 +37,7 @@ const AcquireEmailAddresses: React.FC = () => {
                             className="flex relative pb-10 sm:items-center md:w-1/1 mx-auto"
                             key={key}
                         >
-                            <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+                            <div className="flex-grow md:pl-8 pl-6 flex flex-col sm:flex-row items-center">
                                 <div className="flex-shrink-0 w-20 h-20 text-indigo-400  inline-flex items-center justify-center">
                                     <svg
                                         enableBackground="new 0 0 128 128"
