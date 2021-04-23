@@ -6,7 +6,7 @@ const ActivityIcon = (
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="feather feather-activity stroke-2 stroke-current text-gray-800 dark:text-white h-full w-full"
+        className="feather feather-activity stroke-2 stroke-current text-white h-full w-full"
     >
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
     </svg>
