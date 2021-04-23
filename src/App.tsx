@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Views
 import Frontpage from "./Views/Frontpage";
 import Activity from "./Views/Activity";
+import MailCheck from "./Views/MailCheck";
 
 // Components
 import Nav from "./Components/Nav";
@@ -17,6 +18,7 @@ const App: React.FC = () => {
                 <Switch>
                     <Route exact path="/" component={Frontpage} />
                     <Route exact path="/breaches" component={Activity} />
+                    <Route exact path="/mailcheck" component={MailCheck} />
                 </Switch>
                 <Footer />
             </main>

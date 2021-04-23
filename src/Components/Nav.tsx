@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 // Icons
 import HomeIcon from "../assets/img/home";
 import ActivityIcon from "../assets/img/activity";
+
 import PhishingHeaderImg from "../assets/img/phishing-banner.jpg";
 
 const Nav: React.FC = () => {
@@ -24,6 +25,11 @@ const Nav: React.FC = () => {
                         <NavItem
                             route="/breaches"
                             title="Breaches"
+                            icon={ActivityIcon}
+                        />
+                        <NavItem
+                            route="/mailcheck"
+                            title="Mail checker"
                             icon={ActivityIcon}
                         />
                     </ul>
