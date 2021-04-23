@@ -13,20 +13,25 @@ import IMailchecker from "../Interfaces/Mailchecker";
 // Hooks
 import useMailChecker from "../Hooks/Mailchecker";
 
+// Components
+import MailItem from "./MailItem";
+
 const MailChecker: React.FC = () => {
     const [rawMail, setMail] = useState<string | undefined>();
     const data = useMailChecker<IMailchecker | undefined>(rawMail);
     const [accessToken, setAccessToken] = useState<string>();
     const [mailList, setMailList] = useState<IGmailList>();
-    const [mailId, setMailId] = useState<string>();
 
     useEffect(() => {
         if (accessToken) {
-            fetch("https://gmail.googleapis.com/gmail/v1/users/me/messages", {
-                method: "GET",
-                headers: { Authorization: `Bearer ${accessToken}` },
-                redirect: "follow",
-            }).then(async (r) => {
+            fetch(
+                "https://gmail.googleapis.com/gmail/v1/users/me/messages?includeSpamTrash=true",
+                {
+                    method: "GET",
+                    headers: { Authorization: `Bearer ${accessToken}` },
+                    redirect: "follow",
+                }
+            ).then(async (r) => {
                 const mailList = (await r.json()) as IGmailList;
                 setMailList(mailList);
             });
@@ -73,12 +78,18 @@ const MailChecker: React.FC = () => {
                     </p>
                 ))}
 
-            {mailList &&
-                mailList.messages.map((item, key) => (
-                    <div key={key}>
-                        <p onClick={() => setMailId(item.id)}>{item.id}</p>
-                    </div>
-                ))}
+            {accessToken &&
+                mailList &&
+                mailList.messages
+                    .slice(0, 2)
+                    .map((item, key) => (
+                        <MailItem
+                            key={key}
+                            item={item}
+                            accessToken={accessToken}
+                            setRawMail={setMail}
+                        />
+                    ))}
         </section>
     );
 
