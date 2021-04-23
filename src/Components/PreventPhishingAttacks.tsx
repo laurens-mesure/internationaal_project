@@ -45,21 +45,28 @@ const data = [
 ];
 
 const listItems = data.map((item, key) => (
-    <div key={key} className="border-b border-gray-200 mb-2">
-        <p className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">
-            {item.title}
-        </p>
-        <p className="mb-2 dark:text-white">{item.description}</p>
+    <div className="md:w-1/1 p-4">
+        <div className="border border-gray-200 p-6 rounded-lg">
+            <div
+                className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                     className="w-6 h-6" viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+            </div>
+            <h2 className="text-lg dark:text-gray-100 text-gray-900 font-medium title-font mb-2">{item.title}</h2>
+            <p className="leading-relaxed text-base dark:text-gray-400">{item.description}</p>
+        </div>
     </div>
 ));
 
 const PreventPhishingAttacks: React.FC = () => {
     return (
         <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 mb-10">
-            <h2 className="text-2xl text-center font-semibold text-gray-700 dark:text-gray-200 mb-4">
+            <h2 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
                 Preventing phishing attacks
             </h2>
-            <p className="text-center mb-4 dark:text-white">
+            <p className="mb-4 dark:text-white">
                 Now that you know what phishing attacks are and the different
                 types of it, we’re going to take a look at some ways to protect
                 your sensitive data against these attacks.
@@ -72,7 +79,15 @@ const PreventPhishingAttacks: React.FC = () => {
                     className="w-1/3 ml-10"
                 />
             </div>
-            {listItems}
+
+            <section className="text-gray-600 body-font">
+                <div className="container px-5 py-10 mx-auto">
+                    <div className="flex flex-wrap -m-4">
+                        {listItems}
+                    </div>
+                </div>
+            </section>
+
         </div>
 
     );

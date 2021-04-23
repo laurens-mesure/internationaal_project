@@ -12,7 +12,7 @@ const AgeGroups: React.FC = () => {
                     alt="Wheelchair"
                     className="h-24 mr-10"
                 />
-                <h1 className="text-2xl 2xl:font-bold mb-4 mt-2 text-gray-700 dark:text-gray-200">
+                <h1 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3">
                     What age group is most vulnerable to phishing?
                 </h1>
             </div>
