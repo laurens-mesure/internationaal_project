@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 // Icons
 import HomeIcon from "../assets/img/home";
 import ActivityIcon from "../assets/img/activity";
+import InboxIcon from "../assets/img/inbox";
+import ClipIcon from "../assets/img/clipboard";
 
 import PhishingHeaderImg from "../assets/img/phishing-banner.jpg";
 
@@ -26,7 +28,7 @@ const Nav: React.FC = () => {
                             <NavItem
                                 route="/Quiz"
                                 title="Quiz"
-                                icon={ActivityIcon}
+                                icon={ClipIcon}
                             />
                         </div>
                         <div className="flex flex-row">
@@ -38,7 +40,7 @@ const Nav: React.FC = () => {
                             <NavItem
                                 route="/mailcheck"
                                 title="Mail check"
-                                icon={ActivityIcon}
+                                icon={InboxIcon}
                             />
                         </div>
                     </ul>
