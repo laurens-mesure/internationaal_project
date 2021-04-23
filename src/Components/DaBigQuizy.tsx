@@ -106,39 +106,49 @@ const DaBigQuizy: React.FC = () => {
                         className="flex flex-col w-max px-4 py-2 bg-green-500 rounded-md shadow-md"
                         onClick={(e)=>handleClick(e)}
                     />
-                    
+
                 ):(
                     !zoomed ? (
                         <div className="flex flex-col">
-                            <div className="flex flex-row h-1/2 mx-auto">
-                                <img className="object-scale-down w-3/4 px-4 py-2" style={{cursor: "zoom-in"}} onClick={()=>{enLarge()}} src={questions[currentQuestion].img} alt="YEET"/>
-                                <div className="flex flex-col">
-                                    {yeet[currentQuestion].answerOptions.map((hunk: any)=>{
-                                        let c = "bg-white-500";
-                                        if(hunk.answerd){
-                                            if (hunk.isCorrect){
-                                                c = "bg-green-500";
-                                            }else{
-                                                c = "bg-red-500";
-                                            }
-                                        }
-                                        let x = "w-50 mt-10 px-4 py-2 text-black rounded-md shadow-md hover:border-green-500 border-2 dark:text-white " + c;
-                                        return <button data-xyz='DAAG' className={x} onClick={(e)=>handleAnswerOptionClick(e, hunk)}>{hunk.answerText}</button>
-                                        })}
+                            <section className="text-gray-600 body-font">
+                                <div className="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
+                                    <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+
+                                        <img className="object-scale-down w-3/4 px-4 py-2" style={{cursor: "zoom-in"}} onClick={()=>{enLarge()}} src={questions[currentQuestion].img} alt="YEET"/>
+
+                                    </div>
+                                    <div
+                                        className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                                        <div className="flex flex-col">
+                                            {yeet[currentQuestion].answerOptions.map((hunk: any)=>{
+                                                let c = "bg-white-500";
+                                                if(hunk.answerd){
+                                                    if (hunk.isCorrect){
+                                                        c = "bg-green-500";
+                                                    }else{
+                                                        c = "bg-red-500";
+                                                    }
+                                                }
+                                                let x = "w-50 mt-10 px-4 py-2 text-black rounded-md shadow-md hover:border-green-500 border-2 dark:text-white " + c;
+                                                return <button data-xyz='DAAG' className={x} onClick={(e)=>handleAnswerOptionClick(e, hunk)}>{hunk.answerText}</button>
+                                            })}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <br/>
-                            <button className="hover:bg-green-300 w-max mx-auto px-4 py-2 bg-green-200 text-black rounded-md shadow-md" onClick={()=>{nextQuestion()}}>Next</button>
+                            </section>
+                            <button className="hover:bg-green-300 w-max mx-auto px-4 py-2 mb-20 bg-green-200 text-black rounded-md shadow-md" onClick={()=>{nextQuestion()}}>Next</button>
                         </div>
                     ) : (
                         <div>
                             <img className="object-contain mx-auto w-3/4 px-4 py-2 text-white" style={{cursor: "zoom-out"}} onClick={()=>{enLarge()}} src={questions[currentQuestion].img} alt="YEET"/>
                         </div>
                     )
-                )     
-            )       
-            }  
+                )
+            )
+            }
         </div>
+
+
     );
 
     function enLarge(){

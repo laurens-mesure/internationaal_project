@@ -23,6 +23,11 @@ const Nav: React.FC = () => {
                     <ul className="flex flex-row md:flex-row items-center justify-center">
                         <NavItem route="/" title="Home" icon={HomeIcon}/>
                         <NavItem
+                            route="/Quiz"
+                            title="Quiz"
+                            icon={ActivityIcon}
+                        />
+                        <NavItem
                             route="/breaches"
                             title="Breaches"
                             icon={ActivityIcon}
