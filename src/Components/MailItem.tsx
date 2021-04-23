@@ -27,21 +27,17 @@ const MailItem: React.FC<Props> = ({ item, accessToken, setRawMail }) => {
         ).then(async (r) => {
             if (r.ok) {
                 const data = (await r.json()) as Gmail;
-                // console.log(
-                //     atob(
-                //         data.raw
-                //             .replace("-", "+")
-                //             .replace("_", "/")
-                //             .slice(0, -1)
-                //     )
-                // );
                 setMail(data);
             }
         });
     }, [item, accessToken]);
 
     return mail ? (
-        <div onClick={() => setRawMail(atob(mail.raw))}>
+        <div
+            onClick={() =>
+                setRawMail(atob(mail.raw.replace(/-/g, "+").replace(/_/g, "/")))
+            }
+        >
             <p>{mail.snippet}</p>
         </div>
     ) : (
