@@ -11,7 +11,7 @@ const Nav: React.FC = () => {
         <header className="bg-gray-900 header mb-10">
             <nav className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
                 <div className="flex items-center justify-between">
-                    <a className="text-xl font-bold text-white transition-colors duration-300 transform md:text-2xl hover:text-blue-400"
+                    <a href="/"  className="text-xl font-bold text-white transition-colors duration-300 transform md:text-2xl hover:text-blue-400"
                     >International Project</a>
 
                 </div>
@@ -19,7 +19,7 @@ const Nav: React.FC = () => {
                 <div
                     className="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
 
-                    <ul className="flex flex-row items-center justify-center">
+                    <ul className="flex flex-row md:flex-row items-center justify-center">
                         <NavItem route="/" title="Home" icon={HomeIcon}/>
                         <NavItem
                             route="/breaches"

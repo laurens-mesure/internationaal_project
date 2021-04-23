@@ -21,10 +21,10 @@ const MostCommonPhishingPlaces: React.FC = () => {
                 />
                 <p className="text-xs w-4/5 mx-auto dark:text-white">
                     Greg, Aaron. Phishing Activity Trends Report. 2021. Anti-Phishing Working Group,
-                    <a 
+                    <a
                         className="text-xs w-4/5 mx-auto dark:text-white"
                         href="https://docs.apwg.org/reports/apwg_trends_report_q4_2020.pdf">
-                        https://docs.apwg.org/reports/apwg_trends_report_q4_2020.pdf
+                         https://docs.apwg.org/
                     </a>
                 </p>
             </div>
