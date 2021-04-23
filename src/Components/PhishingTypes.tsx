@@ -52,15 +52,18 @@ const data = [
     },
 ];
 
-const listItems = data.map((d) => (
-    <div className="md:w-1/1 p-4">
+const listItems = data.map((d, key) => (
+    <div className="md:w-1/1 p-4" key={key}>
         <div className="border border-gray-200 p-6 rounded-lg">
-            <div
-                className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+            <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
                 &#127907;
             </div>
-            <h2 className="text-lg dark:text-gray-100 text-gray-900 font-medium title-font mb-2">{d.name}</h2>
-            <p className="leading-relaxed text-base dark:text-gray-400">{d.description}</p>
+            <h2 className="text-lg dark:text-gray-100 text-gray-900 font-medium title-font mb-2">
+                {d.name}
+            </h2>
+            <p className="leading-relaxed text-base dark:text-gray-400">
+                {d.description}
+            </p>
         </div>
     </div>
 ));
@@ -84,13 +87,9 @@ const PhishingTypes: React.FC = () => {
 
                 <section className="text-gray-600 body-font">
                     <div className="container px-5 py-10 mx-auto">
-                        <div className="flex flex-wrap -m-4">
-                            {listItems}
-                        </div>
+                        <div className="flex flex-wrap -m-4">{listItems}</div>
                     </div>
                 </section>
-
-
             </div>
         </React.Fragment>
     );

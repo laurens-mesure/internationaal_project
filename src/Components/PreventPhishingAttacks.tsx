@@ -45,17 +45,27 @@ const data = [
 ];
 
 const listItems = data.map((item, key) => (
-    <div className="md:w-1/1 p-4">
+    <div className="md:w-1/1 p-4" key={key}>
         <div className="border border-gray-200 p-6 rounded-lg">
-            <div
-                className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                     className="w-6 h-6" viewBox="0 0 24 24">
+            <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+                <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-6 h-6"
+                    viewBox="0 0 24 24"
+                >
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
             </div>
-            <h2 className="text-lg dark:text-gray-100 text-gray-900 font-medium title-font mb-2">{item.title}</h2>
-            <p className="leading-relaxed text-base dark:text-gray-400">{item.description}</p>
+            <h2 className="text-lg dark:text-gray-100 text-gray-900 font-medium title-font mb-2">
+                {item.title}
+            </h2>
+            <p className="leading-relaxed text-base dark:text-gray-400">
+                {item.description}
+            </p>
         </div>
     </div>
 ));
@@ -82,14 +92,10 @@ const PreventPhishingAttacks: React.FC = () => {
 
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-10 mx-auto">
-                    <div className="flex flex-wrap -m-4">
-                        {listItems}
-                    </div>
+                    <div className="flex flex-wrap -m-4">{listItems}</div>
                 </div>
             </section>
-
         </div>
-
     );
 };
 
