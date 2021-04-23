@@ -5,9 +5,9 @@ import MapIcon from "../assets/img/map.svg";
 const OriginStory: React.FC = () => {
     return (
         <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-gray-700 text-lg mb-4 mt-4">
-            <div className="flex flex-row justify-between">
-                <div className="w-2/4">
-                    <h1 className="text-2xl 2xl:font-bold mb-4 mt-2 text-gray-700 dark:text-gray-200">
+            <div className="flex flex-col md:flex-row justify-between">
+                <div className="">
+                    <h1 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3">
                         Origin of phishing
                     </h1>
                     <p className="mb-3 dark:text-white">
@@ -16,7 +16,7 @@ const OriginStory: React.FC = () => {
                         passwords.
                     </p>
                 </div>
-                <img src={MapIcon} alt="Map" className="w-1/4 mx-auto mb-6" />
+                <img src={MapIcon} alt="Map" className="w-1/4 mx-auto mb-6"/>
             </div>
             <p className="mb-3 dark:text-white">
                 By analogy with the sport of angling &#127907;, these Internet
@@ -25,8 +25,16 @@ const OriginStory: React.FC = () => {
                 users.
             </p>
             <p className="mb-3 dark:text-white">
-                They knew that most users wouldn't take the bait, a few likely
+                They knew that most users wouldn't take the bait, but a few likely
                 would.
+            </p>
+
+            <p className="mb-3 dark:text-white">
+                Phishing originates from the 90s with hackers impersonating ISP employees using spoof mails and
+                contacting the customers asking for their private information. After that, the hackers started using
+                phishing for targeting online payment systems and eCommerce. Next, hackers would start exploiting the
+                use of popup windows to gather sensitive information. From there on, the use of phishing has really
+                taken off.
             </p>
         </section>
     );

@@ -9,6 +9,7 @@ import MailCheck from "./Views/MailCheck";
 // Components
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
+import Quiz from "./Views/Quiz";
 
 const App: React.FC = () => {
     return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
                 <Nav />
                 <Switch>
                     <Route exact path="/" component={Frontpage} />
+                    <Route exact path="/Quiz" component={Quiz} />
                     <Route exact path="/breaches" component={Activity} />
                     <Route exact path="/mailcheck" component={MailCheck} />
                 </Switch>

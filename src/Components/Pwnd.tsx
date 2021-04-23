@@ -1,5 +1,8 @@
 import React, { FormEvent, useEffect, useState } from "react";
 
+// Icons
+import SearchIcon from "../assets/img/search.svg";
+
 // Interfaces
 import IPwnd from "../Interfaces/Pwnd";
 
@@ -16,13 +19,13 @@ const Pwnd: React.FC = () => {
     }, [data]);
 
     return (
-        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
+        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 pb-24 pt-10">
             <h1 className="text-center text-lg mb-4 text-gray-700 dark:text-gray-200">
                 You can enter your email address here to verify if you've been a
                 part of a data breach
             </h1>
             <form
-                className="flex flex-row mb-6"
+                className="bg-white flex items-center rounded-full shadow-md mb-8 border-2"
                 onSubmit={(e) => handleSubmit(e)}
             >
                 <input
@@ -31,23 +34,21 @@ const Pwnd: React.FC = () => {
                     required
                     autoComplete="off"
                     placeholder="john@example.com"
-                    className="border border-gray-300 shadow-md flex-grow rounded-md p-1 px-2"
+                    className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
                 />
-                <input
-                    type="submit"
-                    value="Check me"
-                    className="w-max px-4 py-2 ml-4 bg-green-500 text-white rounded-md shadow-md hover:border-white border-2 dark:border-black"
-                />
+                <button className="bg-blue-500 text-white rounded-full p-2 m-1 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                    <img src={SearchIcon} alt="search" className="h-4" />
+                </button>
             </form>
             {data &&
                 !isLoading &&
                 (data[0].Name === "ok" ? (
-                    <p className="text-center bg-green-400 rounded-md shadow-lg p-3 text-white">
+                    <p className="text-center bg-green-400 text-white rounded-md shadow-lg p-3">
                         The mail address {email} has not been compromised!
                     </p>
                 ) : (
                     <>
-                        <p className="text-center bg-red-400 rounded-md shadow-lg p-3 text-white">
+                        <p className="text-center bg-red-400 text-white rounded-md shadow-lg p-3 ">
                             The mail address {email} is compromised! Change your
                             password!
                         </p>

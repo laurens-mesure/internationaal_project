@@ -4,7 +4,7 @@ import React from "react";
 import Pwnd from "../Components/Pwnd";
 
 const Activity: React.FC = () => {
-    return <Pwnd />;
+    return<Pwnd />;
 };
 
 export default Activity;
