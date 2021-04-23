@@ -26,7 +26,7 @@ const MailChecker: React.FC = () => {
     useEffect(() => {
         if (accessToken) {
             fetch(
-                "https://gmail.googleapis.com/gmail/v1/users/me/messages?includeSpamTrash=true",
+                "https://gmail.googleapis.com/gmail/v1/users/me/messages?includeSpamTrash=True&labelIds=SPAM",
                 {
                     method: "GET",
                     headers: { Authorization: `Bearer ${accessToken}` },
@@ -34,6 +34,7 @@ const MailChecker: React.FC = () => {
                 }
             ).then(async (r) => {
                 const mailList = (await r.json()) as IGmailList;
+                console.log(mailList);
                 setMailList(mailList);
             });
         }

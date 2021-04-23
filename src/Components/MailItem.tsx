@@ -42,6 +42,11 @@ const MailItem: React.FC<Props> = ({
         <div
             onClick={() => {
                 setLoading(true);
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth",
+                });
                 setRawMail(
                     atob(mail.raw.replace(/-/g, "+").replace(/_/g, "/"))
                 );
