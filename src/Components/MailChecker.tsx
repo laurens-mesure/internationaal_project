@@ -34,7 +34,6 @@ const MailChecker: React.FC = () => {
                 }
             ).then(async (r) => {
                 const mailList = (await r.json()) as IGmailList;
-                console.log(mailList);
                 setMailList(mailList);
             });
         }

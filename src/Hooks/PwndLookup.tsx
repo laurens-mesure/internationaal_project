@@ -19,7 +19,6 @@ function usePwndLookup(email?: string) {
                     if (r.ok) {
                         const data = await r.json();
                         setData(data);
-                        console.log(data);
                     } else {
                         setData([
                             {

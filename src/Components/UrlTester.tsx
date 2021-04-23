@@ -18,7 +18,6 @@ const UrlTester: React.FC = () => {
 
     useEffect(() => {
         if (isScanning) {
-            console.log("timeout");
             setUrl("");
             setTimeout(() => {
                 if (submitButton.current) submitButton.current.click();
