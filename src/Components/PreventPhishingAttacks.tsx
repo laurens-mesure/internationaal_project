@@ -72,7 +72,7 @@ const listItems = data.map((item, key) => (
 
 const PreventPhishingAttacks: React.FC = () => {
     return (
-        <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 mb-10">
+        <div className="mb-10">
             <h2 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
                 Preventing phishing attacks
             </h2>

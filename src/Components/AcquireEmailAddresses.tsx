@@ -26,7 +26,7 @@ const data = [
 
 const AcquireEmailAddresses: React.FC = () => {
     return (
-        <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
+        <div>
             <h2 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3">
                 How do spammers get my email address?
             </h2>

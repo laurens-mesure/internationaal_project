@@ -5,7 +5,7 @@ import WheelchairIcon from "../assets/img/wheelchair.svg";
 
 const AgeGroups: React.FC = () => {
     return (
-        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mb-4 mt-4">
+        <section className="text-lg mb-4 mt-4">
             <div className="flex flex-col md:flex-row items-center justify-center mb-6">
                 <img
                     src={WheelchairIcon}

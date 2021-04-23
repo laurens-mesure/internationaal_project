@@ -6,7 +6,7 @@ import MostPhishingAttacksPerCountry from "../assets/img/MostPhishingAttacksPerC
 
 const MostCommonPhishingPlaces: React.FC = () => {
     return (
-        <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mb-4 my-20">
+        <div className="text-lg mb-4 my-20">
             <h1 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3">
                 Where does the most phishing take place?
             </h1>

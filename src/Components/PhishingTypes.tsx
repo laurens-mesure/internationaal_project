@@ -71,7 +71,7 @@ const listItems = data.map((d, key) => (
 const PhishingTypes: React.FC = () => {
     return (
         <React.Fragment>
-            <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
+            <div>
                 <div className="flex flex-col items-center sm:items-start md:flex-row justify-between mb-6">
                     <img src={TypeIcon} alt="types" className="w-1/3 mr-10" />
                     <div className="w-2/3">

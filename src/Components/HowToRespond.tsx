@@ -40,10 +40,7 @@ const data = [
 ];
 
 const listItems = data.map((item, key) => (
-    <div
-        className="flex relative pb-10 sm:items-center md:w-2/3 mx-auto"
-        key={key}
-    >
+    <div className="flex relative pb-10 sm:items-center mx-auto" key={key}>
         <div className="h-full w-6 absolute inset-0 flex items-center justify-center">
             <div className="h-full w-1 dark:bg-gray-800 pointer-events-none bg-gray-200"></div>
         </div>
@@ -81,7 +78,7 @@ const listItems = data.map((item, key) => (
 
 const HowToRespond: React.FC = () => {
     return (
-        <div className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 mb-10">
+        <div className="mb-10">
             <h2 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3">
                 9. How to respond when things go wrong?
             </h2>

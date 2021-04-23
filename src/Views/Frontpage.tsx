@@ -14,7 +14,7 @@ import HowToRespond from "../Components/HowToRespond";
 
 const Frontpage: React.FC = () => {
     return (
-        <div className="p-2 dark:bg-gray-900">
+        <div className="p-2 w-11/12 sm:w-2/3 xl:w-2/5 dark:bg-gray-900 flex flex-col mx-auto">
             <WhatIs />
             <OriginStory />
             <WhyPhishing />

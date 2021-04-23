@@ -6,7 +6,7 @@ import UrlTester from "./UrlTester";
 
 const WhatIs: React.FC = () => {
     return (
-        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mt-4 mb-20">
+        <section className="mx-auto text-lg mt-4 mb-20">
             <img
                 src={FishingIcon}
                 alt="Phishing"
@@ -44,11 +44,12 @@ const WhatIs: React.FC = () => {
             </p>
 
             <p className="mb-10 dark:text-white">
-                Phishing is used by criminals mostly for financial gain. It is also often used to gain a foothold in
-                corporate or governmental networks as a part of a larger attack.
+                Phishing is used by criminals mostly for financial gain. It is
+                also often used to gain a foothold in corporate or governmental
+                networks as a part of a larger attack.
             </p>
 
-            <UrlTester/>
+            <UrlTester />
         </section>
     );
 };
