@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Google login
 import GoogleLogin, {
@@ -6,17 +6,32 @@ import GoogleLogin, {
     GoogleLoginResponseOffline,
 } from "react-google-login";
 
+// Interfaces
+import IGmailList from "../Interfaces/GmailList";
+import IMailchecker from "../Interfaces/Mailchecker";
+
 // Hooks
 import useMailChecker from "../Hooks/Mailchecker";
-import IMailchecker from "../Interfaces/Mailchecker";
 
 const MailChecker: React.FC = () => {
     const [rawMail, setMail] = useState<string | undefined>();
     const data = useMailChecker<IMailchecker | undefined>(rawMail);
+    const [accessToken, setAccessToken] = useState<string>();
+    const [mailList, setMailList] = useState<IGmailList>();
+    const [mailId, setMailId] = useState<string>();
 
-    // Google oAuth2 settings
-    const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    useEffect(() => {
+        if (accessToken) {
+            fetch("https://gmail.googleapis.com/gmail/v1/users/me/messages", {
+                method: "GET",
+                headers: { Authorization: `Bearer ${accessToken}` },
+                redirect: "follow",
+            }).then(async (r) => {
+                const mailList = (await r.json()) as IGmailList;
+                setMailList(mailList);
+            });
+        }
+    }, [accessToken]);
 
     return (
         <section className="p-4 mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mt-4 mb-20">
@@ -36,12 +51,14 @@ const MailChecker: React.FC = () => {
                 />
             </form>
             <GoogleLogin
-                clientId={CLIENT_ID || ""}
-                buttonText="Login"
-                onSuccess={(response) => responseGoogle(response)}
+                clientId={process.env.REACT_APP_CLIENT_ID || ""}
+                buttonText="Sign-in"
+                onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={"single_host_origin"}
+                scope={"https://mail.google.com/"}
             />
+
             {data &&
                 (parseFloat(data.score) < 1.5 ? (
                     <p className="text-center bg-green-400 rounded-md shadow-lg p-3 text-white">
@@ -54,6 +71,13 @@ const MailChecker: React.FC = () => {
                     >
                         This email is probably spam 👎
                     </p>
+                ))}
+
+            {mailList &&
+                mailList.messages.map((item, key) => (
+                    <div key={key}>
+                        <p onClick={() => setMailId(item.id)}>{item.id}</p>
+                    </div>
                 ))}
         </section>
     );
@@ -71,7 +95,10 @@ const MailChecker: React.FC = () => {
     function responseGoogle(
         response: GoogleLoginResponse | GoogleLoginResponseOffline
     ) {
-        console.log(response);
+        if ("code" in response) {
+            return;
+        }
+        setAccessToken(response.accessToken);
     }
 };
 
