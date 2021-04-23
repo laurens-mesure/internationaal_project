@@ -51,7 +51,7 @@ const MailItem: React.FC<Props> = ({
                     atob(mail.raw.replace(/-/g, "+").replace(/_/g, "/"))
                 );
             }}
-            className="flex flex-row p-2 rounded-md shadow-md mb-4 mt-8"
+            className="flex flex-row p-2 rounded-md shadow-md mb-4 mt-8 dark:bg-lightDark dark:text-white"
         >
             <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png"

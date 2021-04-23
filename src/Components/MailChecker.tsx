@@ -48,7 +48,7 @@ const MailChecker: React.FC = () => {
 
     return (
         <section className="p-4 mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mt-4 mb-20">
-            <h1 className="mb-2">
+            <h1 className="mb-2 dark:text-white">
                 You can paste a raw email here to check if it is spam or not.
                 <br />
                 Or you can choose an email from your own <em>Gmail account</em>!
@@ -84,10 +84,7 @@ const MailChecker: React.FC = () => {
                         The email is probably safe 🎉
                     </p>
                 ) : (
-                    <p
-                        className="text-center bg-red-300 rounded-md shadow-lg p-3"
-                        style={{ color: "#513743" }}
-                    >
+                    <p className="text-center bg-red-400 rounded-md shadow-lg p-3 text-white">
                         This email is probably spam 👎
                     </p>
                 ))}
