@@ -43,15 +43,12 @@ const Pwnd: React.FC = () => {
             {data &&
                 !isLoading &&
                 (data[0].Name === "ok" ? (
-                    <p
-                        className="text-center bg-green-400 rounded-md shadow-lg p-3"
-                        style={{ color: "#513743" }}
-                    >
+                    <p className="text-center bg-green-400 text-white rounded-md shadow-lg p-3">
                         The mail address {email} has not been compromised!
                     </p>
                 ) : (
                     <>
-                        <p className="text-center bg-red-400 text-gray-800 rounded-md shadow-lg p-3 ">
+                        <p className="text-center bg-red-400 text-white rounded-md shadow-lg p-3 ">
                             The mail address {email} is compromised! Change your
                             password!
                         </p>

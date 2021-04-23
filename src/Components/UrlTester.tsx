@@ -51,11 +51,8 @@ const UrlTester: React.FC = () => {
             {data && data.response_code === 1 && !isScanning ? (
                 <p
                     className={`text-center ${
-                        data.positives || -1 > 0 ? "bg-red-300" : "bg-green-400"
-                    } rounded-md shadow-lg p-3`}
-                    style={{
-                        color: data.positives || -1 > 0 ? "#513743" : "#fff",
-                    }}
+                        data.positives || -1 > 0 ? "bg-red-400" : "bg-green-400"
+                    } rounded-md shadow-lg p-3 text-white`}
                 >
                     The URL {url}{" "}
                     {data.positives || -1 > 0

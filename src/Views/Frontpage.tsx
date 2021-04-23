@@ -12,7 +12,6 @@ import AcquireEmailAddresses from "../Components/AcquireEmailAddresses";
 import HowToRespond from "../Components/HowToRespond";
 // import DaBigQuizy from "../Components/DaBigQuizy";
 
-
 const Frontpage: React.FC = () => {
     return (
         <div className="p-2 dark:bg-gray-900">
@@ -25,8 +24,6 @@ const Frontpage: React.FC = () => {
             <HowToRespond />
             <AgeGroups />
             <MostCommonPhishingPlaces />
-            {/* <DaBigQuizy /> */}
-
         </div>
     );
 };
