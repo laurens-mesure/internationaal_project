@@ -92,9 +92,9 @@ const DaBigQuizy: React.FC = () => {
             {
             showScore ? (
                 <div className="flex flex-col mb-6">
-                    <p className="font-semibold text-3xl dark:text-white">Your score is {score.toFixed(2)}/{questions.length}</p>
+                    <p className="font-semibold text-3xl dark:text-white mt-10">Your score is {score.toFixed(2)}/{questions.length}</p>
                     <br/>
-                    <button className="w-max mx-auto px-4 py-2 bg-green-500 text-black rounded-md shadow-md" onClick={()=>{restartQuiz()}}>Restart quiz</button>
+                    <button className="w-max mx-auto px-4 py-2 bg-green-500 text-black rounded-md shadow-md mb-20 mt-10" onClick={()=>{restartQuiz()}}>Restart quiz</button>
                 </div>
             )
             :
@@ -103,7 +103,7 @@ const DaBigQuizy: React.FC = () => {
                     <input
                         type="submit"
                         value="Start QUIZ"
-                        className="flex flex-col w-max px-4 py-2 bg-green-500 rounded-md shadow-md"
+                        className="flex flex-col w-max px-4 py-2 bg-green-500 rounded-md shadow-md my-20"
                         onClick={(e)=>handleClick(e)}
                     />
 
