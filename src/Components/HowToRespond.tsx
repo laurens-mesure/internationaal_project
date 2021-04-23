@@ -71,7 +71,7 @@ const listItems = data.map((item, key) => (
                 <h2 className="font-medium title-font dark:text-gray-100 text-gray-900 mb-1 text-xl">
                     {item.title}
                 </h2>
-                <p className="leading-relaxed text-base dark:text-gray-400">
+                <p className="leading-relaxed text-base dark:text-gray-200">
                     {item.description}
                 </p>
             </div>

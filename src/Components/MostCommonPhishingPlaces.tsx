@@ -18,15 +18,20 @@ const MostCommonPhishingPlaces: React.FC = () => {
                             <img
                                 src={MostPhishingAttacksPerCountry}
                                 alt="Chart of most phishing attacks per country"
-                                className="object-cover object-center h-full w-full"/>
+                                className="object-cover object-center h-full w-full"
+                            />
                         </div>
-                        <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3 dark:text-gray-100">Most
-                            received phishing attacks per country</h2>
-                        <p className="leading-relaxed text-base dark:text-gray-400">Volkman, Elliot. These Are the Top
-                            Most Targeted Countries by Phishing Attacks. 2019. Phishlabs</p>
+                        <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3 dark:text-gray-100">
+                            Most received phishing attacks per country
+                        </h2>
+                        <p className="leading-relaxed text-base dark:text-gray-400">
+                            Volkman, Elliot. These Are the Top Most Targeted
+                            Countries by Phishing Attacks. 2019. Phishlabs
+                        </p>
                         <a
-                            className="text-xs w-4/5 mx-auto dark:text-white"
-                            href="https://info.phishlabs.com/blog/top-targeted-countries-by-phishing-attacks-2019">
+                            className="text-xs w-4/5 mx-auto dark:text-gray-500"
+                            href="https://info.phishlabs.com/blog/top-targeted-countries-by-phishing-attacks-2019"
+                        >
                             https://info.phishlabs.com/blog/top-targeted-countries-by-phishing-attacks-2019
                         </a>
                     </div>
@@ -38,20 +43,24 @@ const MostCommonPhishingPlaces: React.FC = () => {
                                 className="object-cover object-center h-full w-full"
                             />
                         </div>
-                        <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3 dark:text-gray-100">Most phishing attacks per industry</h2>
-                        <p className="leading-relaxed text-base dark:text-gray-400">Greg, Aaron. Phishing Activity
-                            Trends Report. 2021. Anti-Phishing Working Group,</p>
+                        <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3 dark:text-gray-100">
+                            Most phishing attacks per industry
+                        </h2>
+                        <p className="leading-relaxed text-base dark:text-gray-400">
+                            Greg, Aaron. Phishing Activity Trends Report. 2021.
+                            Anti-Phishing Working Group,
+                        </p>
                         <a
-                            className="text-xs w-4/5 mx-auto dark:text-white"
-                            href="https://docs.apwg.org/reports/apwg_trends_report_q4_2020.pdf">
+                            className="text-xs w-4/5 mx-auto dark:text-gray-500"
+                            href="https://docs.apwg.org/reports/apwg_trends_report_q4_2020.pdf"
+                        >
                             https://docs.apwg.org/
                         </a>
-
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default MostCommonPhishingPlaces;
