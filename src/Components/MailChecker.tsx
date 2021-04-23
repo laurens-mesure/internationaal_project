@@ -21,6 +21,7 @@ const MailChecker: React.FC = () => {
     const data = useMailChecker<IMailchecker | undefined>(rawMail);
     const [accessToken, setAccessToken] = useState<string>();
     const [mailList, setMailList] = useState<IGmailList>();
+    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
         if (accessToken) {
@@ -38,10 +39,18 @@ const MailChecker: React.FC = () => {
         }
     }, [accessToken]);
 
+    useEffect(() => {
+        if (data) {
+            setLoading(false);
+        }
+    }, [data]);
+
     return (
         <section className="p-4 mx-auto w-11/12 sm:w-2/3 xl:w-1/3 text-lg mt-4 mb-20">
             <h1 className="mb-2">
-                You can paste a raw email here to check if it is spam or not
+                You can paste a raw email here to check if it is spam or not.
+                <br />
+                Or you can choose an email from your own <em>Gmail account</em>!
             </h1>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <textarea
@@ -49,22 +58,26 @@ const MailChecker: React.FC = () => {
                     name="mail"
                     className="border border-gray-300 w-full rounded-md shadow-md mb-4 p-2 text-sm h-40"
                 ></textarea>
-                <input
-                    type="submit"
-                    className="block mx-auto py-2 px-4 text-center text-lg text-white bg-green-400 rounded-md shadow-md mb-4"
-                    value="Check mail"
-                />
+                <div className="flex flex-row items-center mb-4">
+                    <input
+                        type="submit"
+                        className="block py-3 ml-auto mr-4 px-4 text-center text-lg text-white bg-green-400 rounded-md shadow-md"
+                        value="Check mail"
+                    />
+                    <GoogleLogin
+                        clientId={process.env.REACT_APP_CLIENT_ID || ""}
+                        buttonText="Sign-in"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        cookiePolicy={"single_host_origin"}
+                        scope={"https://mail.google.com/"}
+                        className="mr-auto"
+                    />
+                </div>
             </form>
-            <GoogleLogin
-                clientId={process.env.REACT_APP_CLIENT_ID || ""}
-                buttonText="Sign-in"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={"single_host_origin"}
-                scope={"https://mail.google.com/"}
-            />
 
             {data &&
+                !loading &&
                 (parseFloat(data.score) < 1.5 ? (
                     <p className="text-center bg-green-400 rounded-md shadow-lg p-3 text-white">
                         The email is probably safe 🎉
@@ -81,13 +94,14 @@ const MailChecker: React.FC = () => {
             {accessToken &&
                 mailList &&
                 mailList.messages
-                    .slice(0, 2)
+                    .slice(0, 100)
                     .map((item, key) => (
                         <MailItem
                             key={key}
                             item={item}
                             accessToken={accessToken}
                             setRawMail={setMail}
+                            setLoading={setLoading}
                         />
                     ))}
         </section>
@@ -95,7 +109,6 @@ const MailChecker: React.FC = () => {
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log("form filled out correctly");
         const formData = new FormData(e.currentTarget);
         const mailData = formData.get("mail");
         if (mailData instanceof File) return;

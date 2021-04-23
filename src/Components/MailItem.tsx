@@ -10,9 +10,15 @@ interface Props {
     };
     accessToken: string;
     setRawMail: React.Dispatch<React.SetStateAction<string | undefined>>;
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MailItem: React.FC<Props> = ({ item, accessToken, setRawMail }) => {
+const MailItem: React.FC<Props> = ({
+    item,
+    accessToken,
+    setRawMail,
+    setLoading,
+}) => {
     const [mail, setMail] = useState<Gmail>();
 
     useEffect(() => {
@@ -34,11 +40,25 @@ const MailItem: React.FC<Props> = ({ item, accessToken, setRawMail }) => {
 
     return mail ? (
         <div
-            onClick={() =>
-                setRawMail(atob(mail.raw.replace(/-/g, "+").replace(/_/g, "/")))
-            }
+            onClick={() => {
+                setLoading(true);
+                setRawMail(
+                    atob(mail.raw.replace(/-/g, "+").replace(/_/g, "/"))
+                );
+            }}
+            className="flex flex-row p-2 rounded-md shadow-md mb-4 mt-8"
         >
-            <p>{mail.snippet}</p>
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png"
+                alt="Gmail"
+                className="w-8 self-start flex-grow-0 my-auto mr-4"
+            />
+            <p
+                className="text-sm"
+                dangerouslySetInnerHTML={{
+                    __html: mail.snippet,
+                }}
+            ></p>
         </div>
     ) : (
         <></>

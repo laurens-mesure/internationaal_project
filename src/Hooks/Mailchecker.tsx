@@ -14,7 +14,6 @@ function useMailChecker<T>(rawMail?: string) {
             }).then(async (r) => {
                 if (r.ok) {
                     const data = await r.json();
-                    console.log(data);
                     setData(data);
                 } else {
                     console.error(await r.json());
