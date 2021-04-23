@@ -16,7 +16,7 @@ const RecognizePhishingAttacks = () => {
     return (
         <div
             key="Know how to recognize a phising attack"
-            className="border-b border-gray-200 mb-2"
+            className="mb-2"
         >
             <p className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
                 Know how to recognize a phising attack

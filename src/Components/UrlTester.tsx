@@ -1,5 +1,8 @@
 import React, { FormEvent, useEffect, useRef, useState } from "react";
 
+// Icons
+import SearchIcons from "../assets/img/search.svg";
+
 // Hooks
 import useVirusTotalLookup from "../Hooks/VirusTotalLookup";
 
@@ -15,7 +18,6 @@ const UrlTester: React.FC = () => {
 
     useEffect(() => {
         if (isScanning) {
-            console.log("timeout");
             setUrl("");
             setTimeout(() => {
                 if (submitButton.current) submitButton.current.click();
@@ -30,7 +32,7 @@ const UrlTester: React.FC = () => {
                 URL for malware, phishing, scam...
             </h1>
             <form
-                className="flex flex-row mb-6"
+                className="bg-white flex items-center rounded-full shadow-md mb-8 border-2"
                 onSubmit={(e) => handleSubmit(e)}
             >
                 <input
@@ -38,23 +40,18 @@ const UrlTester: React.FC = () => {
                     name="query"
                     required
                     autoComplete="off"
-                    className="border border-gray-300 shadow-md flex-grow rounded-md p-1 px-2"
+                    placeholder="https://domain.example"
+                    className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
                 />
-                <input
-                    type="submit"
-                    value="Check URL"
-                    className="w-max px-4 py-2 ml-4 bg-green-500 text-white rounded-md shadow-md hover:border-white border-2 dark:border-black"
-                    ref={submitButton}
-                />
+                <button className="bg-blue-500 text-white rounded-full p-2 m-1 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                    <img src={SearchIcons} alt="search" className="h-4" />
+                </button>
             </form>
             {data && data.response_code === 1 && !isScanning ? (
                 <p
                     className={`text-center ${
-                        data.positives || -1 > 0 ? "bg-red-300" : "bg-green-400"
-                    } rounded-md shadow-lg p-3`}
-                    style={{
-                        color: data.positives || -1 > 0 ? "#513743" : "#fff",
-                    }}
+                        data.positives || -1 > 0 ? "bg-red-400" : "bg-green-400"
+                    } rounded-md shadow-lg p-3 text-white`}
                 >
                     The URL {url}{" "}
                     {data.positives || -1 > 0

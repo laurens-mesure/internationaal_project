@@ -12,7 +12,7 @@ const WhatIs: React.FC = () => {
                 alt="Phishing"
                 className="mx-auto mb-6 w-1/2"
             />
-            <h1 className="text-2xl 2xl:font-bold mb-4 mt-2 text-gray-700 dark:text-gray-200">
+            <h1 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3">
                 What is phishing?
             </h1>
             <p className="mb-3 dark:text-white">
@@ -38,12 +38,17 @@ const WhatIs: React.FC = () => {
                 site. As of 2020, phishing is the most common attack performed
                 by cyber criminals.
             </p>
-            <p className="mb-10 dark:text-white">
+            <p className="mb-3 dark:text-white">
                 Such an attack can be disastrous to the victim. It can lead to
                 identity theft, unauthorized purchases, ...
             </p>
 
-            <UrlTester />
+            <p className="mb-10 dark:text-white">
+                Phishing is used by criminals mostly for financial gain. It is also often used to gain a foothold in
+                corporate or governmental networks as a part of a larger attack.
+            </p>
+
+            <UrlTester/>
         </section>
     );
 };
