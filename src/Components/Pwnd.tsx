@@ -20,7 +20,7 @@ const Pwnd: React.FC = () => {
     }, [data]);
 
     return (
-        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3">
+        <section className="mx-auto w-11/12 sm:w-2/3 xl:w-1/3 pb-24 pt-10">
             <h1 className="text-center text-lg mb-4 text-gray-700 dark:text-gray-200">
                 You can enter your email address here to verify if you've been a
                 part of a data breach

@@ -20,23 +20,27 @@ const Nav: React.FC = () => {
                 <div
                     className="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
 
-                    <ul className="flex flex-row md:flex-row items-center justify-center">
-                        <NavItem route="/" title="Home" icon={HomeIcon}/>
-                        <NavItem
-                            route="/Quiz"
-                            title="Quiz"
-                            icon={ActivityIcon}
-                        />
-                        <NavItem
-                            route="/breaches"
-                            title="Breaches"
-                            icon={ActivityIcon}
-                        />
-                        <NavItem
-                            route="/mailcheck"
-                            title="Mail checker"
-                            icon={ActivityIcon}
-                        />
+                    <ul className="flex flex-col md:flex-row items-center justify-center">
+                        <div className="flex flex-row">
+                            <NavItem route="/" title="Home" icon={HomeIcon}/>
+                            <NavItem
+                                route="/Quiz"
+                                title="Quiz"
+                                icon={ActivityIcon}
+                            />
+                        </div>
+                        <div className="flex flex-row">
+                            <NavItem
+                                route="/breaches"
+                                title="Breaches"
+                                icon={ActivityIcon}
+                            />
+                            <NavItem
+                                route="/mailcheck"
+                                title="Mail check"
+                                icon={ActivityIcon}
+                            />
+                        </div>
                     </ul>
 
                 </div>
@@ -61,10 +65,10 @@ interface INavItem {
 
 const NavItem: React.FC<INavItem> = ({title, route, icon}) => {
     return (
-        <Link to={route} className="border border-gray-300 rounded-md px-5 py-2  hover:border-blue-500 mx-3 my-3">
+        <Link to={route} className="border border-gray-300 rounded-md px-3 py-2  hover:border-blue-500 mx-3 my-3">
             <li className="flex flex-row items-center">
                 <div className="h-4 w-4">{icon}</div>
-                <p className="px-2 text-white">{title}</p>
+                <p className="px-1 text-white">{title}</p>
             </li>
         </Link>
     );
