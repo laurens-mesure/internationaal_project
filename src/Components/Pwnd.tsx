@@ -29,6 +29,7 @@ const Pwnd: React.FC = () => {
                 className="bg-white flex items-center rounded-full shadow-md mb-8 border-2"
                 onSubmit={(e) => handleSubmit(e)}
             >
+
                     <input
                         type="email"
                         name="query"
@@ -40,6 +41,7 @@ const Pwnd: React.FC = () => {
                     <button
                         className="bg-blue-500 text-white rounded-full p-2 m-1 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"
                     ><img src={SearchIcon} alt="search" className="h-4" /></button>
+
             </form>
             {data &&
                 !isLoading &&

@@ -74,6 +74,7 @@ const PreventPhishingAttacks: React.FC = () => {
             </div>
             {listItems}
         </div>
+
     );
 };
 

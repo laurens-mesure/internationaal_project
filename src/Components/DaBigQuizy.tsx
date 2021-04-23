@@ -91,7 +91,7 @@ const DaBigQuizy: React.FC = () => {
             showScore ? (
                 <div className="flex flex-row mb-6">
                     <p className="dark:text-white">Your score is {score}/{questions.length}</p>
-                    <button className="w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md" onClick={()=>{restartQuiz()}}>Restart quiz</button>
+                    <button className="w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:border-white border-2 dark:border-black" onClick={()=>{restartQuiz()}}>Restart quiz</button>
                 </div>
             )
             :
@@ -100,7 +100,7 @@ const DaBigQuizy: React.FC = () => {
                     <input
                         type="submit"
                         value="Start QUIZ"
-                        className="flex flex-col w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md"
+                        className="flex flex-col w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:border-white border-2 dark:border-black"
                         onClick={(e)=>handleClick(e)}
                     />
                     
@@ -110,7 +110,7 @@ const DaBigQuizy: React.FC = () => {
                         <div>
                             {questions[currentQuestion].answerOptions.map((hunk)=>{console.log(hunk);return <button data-xyz='DAAG' className="w-max px-4 py-2 bg-white-500 text-black rounded-md shadow-md hover:border-green-500 border-2 dark:text-white" onClick={(e)=>handleAnswerOptionClick(e, hunk.isCorrect)}>{hunk.answerText}</button>})}
                         </div>
-                        <button className="w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md" onClick={()=>{nextQuestion()}}>Next</button>
+                        <button className="w-max px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:border-white border-2 dark:border-black" onClick={()=>{nextQuestion()}}>Next</button>
                     </div>
                 )     
             )       
