@@ -8,7 +8,6 @@ import useVirusTotalLookup from "../Hooks/VirusTotalLookup";
 
 // Interfaces
 import VirusTotal from "../Interfaces/VirusTotal";
-import SearchIcon from "../assets/img/search.svg";
 
 const UrlTester: React.FC = () => {
     const submitButton = useRef<HTMLInputElement>(null);
@@ -42,14 +41,12 @@ const UrlTester: React.FC = () => {
                     name="query"
                     required
                     autoComplete="off"
-                    placeholder="Https://domain.example"
+                    placeholder="https://domain.example"
                     className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
-
-
                 />
-                <button
-                    className="bg-blue-500 text-white rounded-full p-2 m-1 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"
-                ><img src={SearchIcons} alt="search" className="h-4" /></button>
+                <button className="bg-blue-500 text-white rounded-full p-2 m-1 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                    <img src={SearchIcons} alt="search" className="h-4" />
+                </button>
             </form>
             {data && data.response_code === 1 && !isScanning ? (
                 <p
