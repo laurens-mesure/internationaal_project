@@ -80,7 +80,7 @@ const HowToRespond: React.FC = () => {
     return (
         <div className="mb-10">
             <h2 className="dark:text-gray-200 sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3">
-                9. How to respond when things go wrong?
+                How to respond when things go wrong?
             </h2>
             <section className="body-font">
                 <div className="container px-5 py-10 mx-auto flex flex-wrap">
